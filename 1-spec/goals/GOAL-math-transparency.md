@@ -20,6 +20,6 @@
 ## Related Artifacts
 
 - User stories: [US-investor-verifiable-market-claims](../user-stories/US-investor-verifiable-market-claims.md), [US-investor-understands-fufire](../user-stories/US-investor-understands-fufire.md), [US-investor-coherence-index](../user-stories/US-investor-coherence-index.md)
-- Requirements: _none yet_
+- Requirements: [REQ-F-source-attribution-all-figures](../requirements/REQ-F-source-attribution-all-figures.md), [REQ-F-fufire-formula-correct](../requirements/REQ-F-fufire-formula-correct.md), [REQ-F-fufire-plain-language](../requirements/REQ-F-fufire-plain-language.md), [REQ-F-coherence-index-defined](../requirements/REQ-F-coherence-index-defined.md), [REQ-F-reconciled-market-figures](../requirements/REQ-F-reconciled-market-figures.md), [REQ-F-replace-overclaiming-language](../requirements/REQ-F-replace-overclaiming-language.md)
 - Constraints: [CON-subscription-not-onetime](../constraints/CON-subscription-not-onetime.md), [CON-single-source-market-data](../constraints/CON-single-source-market-data.md), [CON-no-unattributed-projections](../constraints/CON-no-unattributed-projections.md), [CON-no-overclaiming](../constraints/CON-no-overclaiming.md)
 - Assumptions: [ASM-preliminary-pricing](../assumptions/ASM-preliminary-pricing.md), [ASM-market-size-defensible](../assumptions/ASM-market-size-defensible.md)

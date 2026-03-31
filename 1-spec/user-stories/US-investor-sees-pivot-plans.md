@@ -22,4 +22,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-pivot-plans-display](../requirements/REQ-F-pivot-plans-display.md)

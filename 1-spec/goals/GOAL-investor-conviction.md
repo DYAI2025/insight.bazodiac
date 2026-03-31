@@ -19,4 +19,4 @@
 ## Related Artifacts
 
 - User stories: [US-investor-understands-product](../user-stories/US-investor-understands-product.md), [US-investor-competitive-positioning](../user-stories/US-investor-competitive-positioning.md), [US-investor-clear-ask](../user-stories/US-investor-clear-ask.md), [US-investor-narrative-arc](../user-stories/US-investor-narrative-arc.md)
-- Requirements: _none yet_
+- Requirements: [REQ-F-hero-60s-comprehension](../requirements/REQ-F-hero-60s-comprehension.md), [REQ-F-competitive-positioning-section](../requirements/REQ-F-competitive-positioning-section.md), [REQ-F-investor-cta-accessibility](../requirements/REQ-F-investor-cta-accessibility.md), [REQ-F-narrative-section-order](../requirements/REQ-F-narrative-section-order.md), [REQ-F-section-navigation](../requirements/REQ-F-section-navigation.md)

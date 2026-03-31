@@ -21,5 +21,5 @@
 ## Related Artifacts
 
 - User stories: [US-investor-premium-impression](../user-stories/US-investor-premium-impression.md), [US-investor-interactive-proof](../user-stories/US-investor-interactive-proof.md), [US-investor-mobile-experience](../user-stories/US-investor-mobile-experience.md)
-- Requirements: _none yet_
+- Requirements: [REQ-USA-deep-tech-first-impression](../requirements/REQ-USA-deep-tech-first-impression.md), [REQ-PERF-canvas-30fps](../requirements/REQ-PERF-canvas-30fps.md), [REQ-USA-mobile-premium-experience](../requirements/REQ-USA-mobile-premium-experience.md), [REQ-PERF-mobile-load-3s](../requirements/REQ-PERF-mobile-load-3s.md)
 - Constraints: [CON-static-frontend-only](../constraints/CON-static-frontend-only.md)

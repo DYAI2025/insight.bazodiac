@@ -146,6 +146,9 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | [REQ-PERF-canvas-30fps](requirements/REQ-PERF-canvas-30fps.md) | Performance | Must-have | Draft | All canvas visualizations ≥30fps on MacBook Air M1 / iPhone 13+ |
 | [REQ-USA-mobile-premium-experience](requirements/REQ-USA-mobile-premium-experience.md) | Usability | Must-have | Draft | Mobile layout: no h-scroll, no hidden sections, ≥44px inputs |
 | [REQ-PERF-mobile-load-3s](requirements/REQ-PERF-mobile-load-3s.md) | Performance | Must-have | Draft | FCP ≤3s on 4G, initial load <500KB |
+| [REQ-F-risk-section-content](requirements/REQ-F-risk-section-content.md) | Functional | Must-have | Draft | New section with both critical risks, diagnosis, and defense lines |
+| [REQ-F-kpi-kill-criteria-display](requirements/REQ-F-kpi-kill-criteria-display.md) | Functional | Must-have | Draft | KPI tables with target/warning/kill + 90-day validation timeline |
+| [REQ-F-pivot-plans-display](requirements/REQ-F-pivot-plans-display.md) | Functional | Must-have | Draft | FaaS B2B + Volume Pivot scenarios with trigger conditions |
 
 ---
 

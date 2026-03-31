@@ -20,6 +20,6 @@
 ## Related Artifacts
 
 - User stories: [US-investor-sees-personas](../user-stories/US-investor-sees-personas.md), [US-investor-segment-contrast](../user-stories/US-investor-segment-contrast.md), [US-investor-unit-economics](../user-stories/US-investor-unit-economics.md)
-- Requirements: _none yet_
+- Requirements: [REQ-F-persona-cards-section](../requirements/REQ-F-persona-cards-section.md), [REQ-F-segment-contrast-display](../requirements/REQ-F-segment-contrast-display.md), [REQ-F-unit-economics-display](../requirements/REQ-F-unit-economics-display.md), [REQ-F-pricing-tiers-display](../requirements/REQ-F-pricing-tiers-display.md)
 - Constraints: [CON-cosmic-fusion-incumbent](../constraints/CON-cosmic-fusion-incumbent.md)
 - Assumptions: [ASM-framework-segment-higher-wtp](../assumptions/ASM-framework-segment-higher-wtp.md), [ASM-cac-under-three](../assumptions/ASM-cac-under-three.md), [ASM-ltv-range-plausible](../assumptions/ASM-ltv-range-plausible.md)

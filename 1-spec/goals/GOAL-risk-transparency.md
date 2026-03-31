@@ -41,4 +41,4 @@ The competitive analysis identified that FuFirE suffers from Overconfidence Bias
 - Constraints: [CON-90-day-kill-discipline](../constraints/CON-90-day-kill-discipline.md), [CON-cosmic-fusion-incumbent](../constraints/CON-cosmic-fusion-incumbent.md), [CON-no-overclaiming](../constraints/CON-no-overclaiming.md)
 - Goals: [GOAL-investor-conviction](../goals/GOAL-investor-conviction.md), [GOAL-math-transparency](../goals/GOAL-math-transparency.md)
 - User stories: [US-investor-sees-risk-framework](../user-stories/US-investor-sees-risk-framework.md), [US-investor-sees-pivot-plans](../user-stories/US-investor-sees-pivot-plans.md)
-- Requirements: _none yet_
+- Requirements: [REQ-F-risk-section-content](../requirements/REQ-F-risk-section-content.md), [REQ-F-kpi-kill-criteria-display](../requirements/REQ-F-kpi-kill-criteria-display.md), [REQ-F-pivot-plans-display](../requirements/REQ-F-pivot-plans-display.md)

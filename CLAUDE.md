@@ -50,7 +50,8 @@ Every number is deterministic, reproducible, and auditable. No black boxes. No g
 
 - **Scaffold**: AI SDLC scaffold deployed and initialized
 - **Existing code**: Interactive investor pitch page (`index.html`, `engine.js`, `interactions.js`, `styles.css`) — live at bazodiac.space
-- **1-spec/**: Stakeholders (7), Goals (5 Draft), Constraints (8 Active), Assumptions (6 Unverified), User Stories (15 Draft). Requirements pending.
+- **1-spec/**: Stakeholders (7), Goals (5 Draft), User Stories (15 Draft), Requirements (23 Draft), Constraints (8 Active), Assumptions (6 Unverified). Specification phase complete.
+- **Gap analysis (2026-03-31)**: 0 Critical, 3 Important (cosmetic), 4 Minor. Ready for phase gate transition to Design.
 - **Key constraint**: Cosmic Fusion is the direct competitor — page must position against them with honest competitive analysis
 - **Key constraint**: No overclaiming — FuFirE has Overconfidence + Complexity Bias; mythopoetic language prohibited
 - **Key constraint**: 90-day kill discipline — pre-committed validation cycle with non-negotiable kill criteria for both HIGH-risk assumptions

@@ -23,4 +23,5 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-risk-section-content](../requirements/REQ-F-risk-section-content.md)
+- [REQ-F-kpi-kill-criteria-display](../requirements/REQ-F-kpi-kill-criteria-display.md)
