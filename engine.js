@@ -175,26 +175,30 @@ class RadarChart {
         this.ctx.beginPath();
         this.ctx.fillStyle = 'rgba(212, 175, 55, 0.15)';
         this.ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
-        
+
         for (let i = 0; i < 5; i++) {
             this.values[i] += (this.targetValues[i] - this.values[i]) * 0.05;
             const angle = (i * 72 - 90) * Math.PI / 180;
             const x = center + Math.cos(angle) * (radius * this.values[i]);
             const y = center + Math.sin(angle) * (radius * this.values[i]);
-            
+
             if (i === 0) this.ctx.moveTo(x, y);
             else this.ctx.lineTo(x, y);
-
-            this.ctx.font = '10px monospace';
-            this.ctx.fillStyle = 'rgba(212, 175, 55, 0.9)';
-            const lx = center + Math.cos(angle) * (radius + 20);
-            const ly = center + Math.sin(angle) * (radius + 20);
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(this.labels[i], lx, ly);
         }
         this.ctx.closePath();
         this.ctx.fill();
         this.ctx.stroke();
+
+        // Draw labels AFTER fill to avoid overwriting fillStyle
+        this.ctx.fillStyle = 'rgba(212, 175, 55, 0.9)';
+        this.ctx.font = '10px monospace';
+        this.ctx.textAlign = 'center';
+        for (let i = 0; i < 5; i++) {
+            const angle = (i * 72 - 90) * Math.PI / 180;
+            const lx = center + Math.cos(angle) * (radius + 20);
+            const ly = center + Math.sin(angle) * (radius + 20);
+            this.ctx.fillText(this.labels[i], lx, ly);
+        }
 
         requestAnimationFrame(() => this.animate());
     }
