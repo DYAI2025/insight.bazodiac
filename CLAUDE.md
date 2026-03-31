@@ -6,25 +6,50 @@
 
 ## Project Overview
 
-**insight.bazodiac** is a premium astrology/zodiac insight platform with a luxury-tier web experience. The frontend is a single-page landing and product showcase built with vanilla HTML/CSS/JS, featuring interactive canvas-based visualizations (connected vortex, ring and radar animations), GSAP scroll-driven interactions, and a gold-leaf neo-luxury design language (dark background `#05070a`, gold accents `#D4AF37`, glassmorphism cards).
+**insight.bazodiac** ([bazodiac.space](https://bazodiac.space)) is the investor-facing insight page for **BAZODIAC** — the world's first mathematical fusion of Western Astrology, Chinese BaZi, and Wu-Xing into a single, auditable signal.
 
-The project aims to deliver decoded astrological signals through a visually immersive, data-driven interface — positioning itself as the intersection of ancient zodiac systems and modern data visualization.
+### The Problem
 
-### Tech Stack (current)
+The global astrology & horoscope market is valued at approximately **$2.2 billion (2025)** and growing at ~5.7% CAGR, yet the entire industry runs on one-dimensional sun-sign retrieval — pre-written text blocks with zero computational logic. No existing product fuses multiple astrological systems with transparent, deterministic mathematics. Chinese BaZi (Four Pillars of Destiny), practiced by over 1 billion people in East Asia, has **0% structured penetration** in the Western digital market. This is a blue-ocean entry point.
 
-- **Frontend**: Vanilla HTML + Tailwind CSS (CDN) + GSAP 3.12 + custom Canvas engine
-- **Visualizations**: `engine.js` — ConnectedVortex particle system with mouse-reactive physics
-- **Interactions**: `interactions.js` — GSAP ScrollTrigger reveals, custom cursor, data counters
-- **Styling**: `styles.css` — CSS custom properties, glassmorphism, gold-leaf gradients
+### The Product
+
+BAZODIAC computes a personal **Signal** by fusing three ancient systems through the **FuFirE Engine** (Fusion Firmament Engine):
+
+| System | What it contributes | Weight | Dimensional focus |
+|--------|-------------------|--------|-------------------|
+| **Western Astrology** | Planetary geometry, natal aspects, transits | 0.375 | Fundamental being |
+| **Chinese BaZi** | Heavenly Stems, Earthly Branches, Four Pillars | 0.375 | Temporal rhythm |
+| **Wu-Xing** | Five Element cycles (generative & controlling) | 0.250 | Physical expression |
+
+**Core formula**: `Signal(s) = 0.375·W(s) + 0.375·B(s) + 0.25·X(s)`
+
+Each sub-signal is a vector in **R⁵** (five-dimensional real space, one axis per element). The combined signal is **L2-normalized onto the S⁴ unit sphere**, making all signals comparable regardless of input magnitude. A **Coherence Index (H ∈ [0, 1])** measures how well the three systems agree — high H means the systems reinforce each other; low H reveals internal tension worth exploring.
+
+Every number is deterministic, reproducible, and auditable. No black boxes. No generative hallucination.
+
+### Why Investors Should Care
+
+- **$2.2B market, zero computational competitors** — every incumbent retrieves text; BAZODIAC computes signals
+- **Cross-cultural moat** — BaZi expertise + Western astrology + mathematical rigor is extraordinarily hard to replicate
+- **73% of Gen Z and Millennials use identity frameworks** (MBTI, Enneagram, astrology) for self-understanding — BAZODIAC is the first to unify multiple traditions with math
+- **B2B API-ready architecture** — the FuFirE engine is designed as a paid API service, not just a consumer app
+- **Defensible IP** — the fusion methodology, weight calibration, and coherence metric are novel and publishable
+
+### This Page's Purpose
+
+`insight.bazodiac` is a **confidential investor preview** — a luxury-tier interactive experience designed to make the product vision tangible. It communicates signal, mathematics, and market opportunity through immersive canvas visualizations and transparent data. The page does not sell to consumers; it sells the vision to capital.
 
 ### Current State
 
-**Project**: insight.bazodiac — premium astrological insight platform
+**Project**: insight.bazodiac — investor-facing insight & pitch experience
+
+**Live URL**: [bazodiac.space](https://bazodiac.space)
 
 **Active phase**: Scaffold initialized → Specification phase ready to begin
 
 - **Scaffold**: AI SDLC scaffold deployed and initialized
-- **Existing code**: Landing page with canvas visualizations (`index.html`, `engine.js`, `interactions.js`, `styles.css`)
+- **Existing code**: Interactive investor pitch page (`index.html`, `engine.js`, `interactions.js`, `styles.css`) — live and functional
 - **1-spec/**: Contains example artifacts from scaffold template — **to be replaced** with insight.bazodiac-specific spec artifacts
 - **Next step**: Run `/SDLC-elicit` to define stakeholders, goals, user stories, and requirements for the insight.bazodiac platform
 
