@@ -1,7 +1,7 @@
 :root {
     --bg: #05070a;
-    --gold: #D4AF37;
     --gold-primary: #D4AF37;
+    /* Neo Luxury: Gold Leaf Gradient */
     --gold-leaf: linear-gradient(135deg, #CF995F 0%, #F1D18A 50%, #D4AF37 100%);
     --indigo: #6366f1;
     --text: #f8f9fa;
@@ -82,14 +82,6 @@ h1, h2, h3, .headline {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.scanline {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 1;
-    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
-}
-
 /* Vignette follows NebulaLens */
 .vignette {
     position: fixed;
@@ -156,14 +148,20 @@ h1, h2, h3, .headline {
     pointer-events: none;
 }
 
-.badge {
-    padding: 6px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 9px;
+.btn-primary {
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    padding: 14px 44px;
+    letter-spacing: 0.2em;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    color: rgba(255, 255, 255, 0.4);
-    display: inline-block;
+    background: transparent;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+    background: var(--gold-primary);
+    color: var(--bg);
 }
 
 /* Coherence Indicator */
@@ -211,4 +209,8 @@ h1, h2, h3, .headline {
 
 @media (prefers-reduced-motion: reduce) {
     canvas, .film-grain, .vignette { display: none !important; }
+}
+
+.hero-kicker {
+    color: rgba(255, 255, 255, 0.4);
 }

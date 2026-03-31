@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bazodiac Investor — Architecture</title>
+  <link rel="stylesheet" href="investor.css" />
+</head>
+<body>
+  <div class="film-grain"></div>
+  <div class="vignette" id="vignette"></div>
+  <div id="nebula-lens" class="nebula-lens"></div>
+  <div id="custom-cursor" class="custom-cursor"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Bazodiac Investor Pages</a>
+      <nav class="topnav"><a href="engine.html">Engine</a><a href="formula.html">Formula</a><a href="audience.html">Audience</a><a href="transparency.html">Transparency</a><a href="competition.html">Competition</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-panel">
+      <div class="page-shell hero-grid">
+        <div class="hero-copy reveal-up">
+          <a class="back-link" href="index.html#investor-dossier">← Back to main page</a>
+          <span class="tech-label kicker">Investor Deep Dive</span>
+          <h1 class="gold-leaf-text text-4xl md:text-6xl">Architecture</h1>
+          <p style="margin-top:1.5rem">Bazodiac is easiest to understand as a four-layer system: astronomical truth, symbolic fusion, product logic, and investor-facing delivery. Each layer narrows ambiguity instead of adding mystique.</p>
+        </div>
+        <div class="hero-figure reveal-up"><svg viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="40" y="28" width="400" height="42" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(212,175,55,0.2)"/>
+      <rect x="70" y="90" width="340" height="42" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(212,175,55,0.24)"/>
+      <rect x="100" y="152" width="280" height="42" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(212,175,55,0.28)"/>
+      <rect x="130" y="214" width="220" height="42" rx="18" fill="rgba(255,255,255,0.03)" stroke="rgba(212,175,55,0.34)"/>
+      <text x="240" y="54" text-anchor="middle" fill="#D4AF37" font-size="11" letter-spacing="4">INPUTS · TIME · PLACE · BIRTH DATA</text>
+      <text x="240" y="116" text-anchor="middle" fill="#D4AF37" font-size="11" letter-spacing="4">ASTRONOMY · WESTERN · BAZI</text>
+      <text x="240" y="178" text-anchor="middle" fill="#D4AF37" font-size="11" letter-spacing="4">FUSION · WU XING · COHERENCE</text>
+      <text x="240" y="240" text-anchor="middle" fill="#D4AF37" font-size="11" letter-spacing="4">PRODUCT · REPORTS · EXPERIENCE</text>
+    </svg></div>
+      </div>
+    </section>
+    <section class="content-block"><div class="page-shell content-grid">
+            <article class="glass-card lead-card reveal-up"><h3>What the stack really means</h3><p>The top of the stack is not astrology content. It is high-quality input handling: civil time, timezone, place, and birth precision. The second layer is calculation. The third layer is fusion. The fourth is what an investor sees: usable outputs, repeatable product logic, and monetizable endpoints.</p></article>
+            <article class="glass-card diagram-card reveal-up"><h3>Core flow</h3><div class="diagram-flow">
+                <div class="flow-step"><div class="flow-index mono">01</div><div class="flow-copy"><strong>Normalize the input</strong><span>Resolve date, time, place, and timezone into a machine-safe starting point.</span></div></div>
+                <div class="flow-step"><div class="flow-index mono">02</div><div class="flow-copy"><strong>Compute both systems</strong><span>Western chart logic and BaZi pillar logic are calculated in parallel.</span></div></div>
+                <div class="flow-step"><div class="flow-index mono">03</div><div class="flow-copy"><strong>Project into one space</strong><span>Both systems are translated into the same five-element vector model.</span></div></div>
+                <div class="flow-step"><div class="flow-index mono">04</div><div class="flow-copy"><strong>Return a product object</strong><span>The result is not raw mysticism. It is a deterministic signal usable by apps, reports, and APIs.</span></div></div>
+            </div></article>
+        </div></section>
+<section class="content-block"><div class="page-shell">
+            <div class="data-row reveal-up">
+                <div class="glass-card data-pill"><div class="big">4</div><div class="small">operational layers</div></div>
+                <div class="glass-card data-pill"><div class="big">3</div><div class="small">source systems</div></div>
+                <div class="glass-card data-pill"><div class="big">1</div><div class="small">fusion output</div></div>
+            </div>
+        </div></section>
+<section class="content-block"><div class="page-shell content-grid">
+            <article class="glass-card text-card reveal-up"><h3>Investor relevance</h3><ul class="list-clean">
+                <li>The architecture separates technical truth from narrative packaging.</li>
+                <li>That separation improves explainability, auditability, and future B2B packaging.</li>
+                <li>The same core can power consumer UX, white-label reports, or API products.</li>
+            </ul></article>
+            <article class="glass-card text-card reveal-up"><h3>Where the architecture wins</h3><ul class="list-clean">
+                <li>It is deeper than generic horoscope apps.</li>
+                <li>It is more consumer-readable than expert-only pro tools.</li>
+                <li>It gives Bazodiac a real path from app story to infrastructure story.</li>
+            </ul></article>
+        </div></section>
+  </main>
+
+  <footer class="page-footer">Bazodiac · Powered by FuFirE · Internal investor website draft · March 2026</footer>
+  <script src="investor.js"></script>
+</body>
+</html>

@@ -1,36 +1,27 @@
-/**
- * BAZODIAC GSAP Interactions
- * Handles reveals, cursor, and data animations
- */
-
-gsap.registerPlugin(ScrollTrigger);
+import { ConnectedVortex, ZodiacRing, RadarChart, FusionRing } from './engine.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const cursor = document.getElementById('custom-cursor');
     const ring = document.getElementById('cursor-ring');
     const lens = document.getElementById('nebula-lens');
     const vig = document.getElementById('vignette');
     
-    if (cursor && ring && lens && vig) {
-        window.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
-            gsap.to(ring, { x: e.clientX, y: e.clientY, duration: 0.2 });
-            gsap.to(lens, { x: e.clientX, y: e.clientY, duration: 1.2, ease: "power2.out" });
+    window.addEventListener('mousemove', (e) => {
+        gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        gsap.to(ring, { x: e.clientX, y: e.clientY, duration: 0.2 });
+        gsap.to(lens, { x: e.clientX, y: e.clientY, duration: 1.2, ease: "power2.out" });
+        if (vig) {
             vig.style.setProperty('--mouse-x', `${e.clientX}px`);
             vig.style.setProperty('--mouse-y', `${e.clientY}px`);
-        });
-    }
-
-    document.querySelectorAll('.interactive').forEach(el => {
-        el.addEventListener('mouseenter', () => ring?.classList.add('active'));
-        el.addEventListener('mouseleave', () => ring?.classList.remove('active'));
+        }
     });
 
     // Scramble/Decode Animation
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
     document.querySelectorAll('.decode-title').forEach(title => {
-        const originalText = title.dataset.text || title.innerText;
-        title.dataset.text = originalText; // Ensure it's set
+        const originalText = title.dataset.text;
         ScrollTrigger.create({
             trigger: title,
             start: "top 90%",
@@ -68,21 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .to('.hero-sub', { opacity: 1, y: 0 }, "-=0.8")
       .to('.hero-cta', { opacity: 1, y: 0 }, "-=0.8");
 
-    // Generic Reveal Up
-    document.querySelectorAll('.reveal-up').forEach(el => {
-        gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                toggleActions: "play none none none"
-            },
-            y: 40,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out'
-        });
-    });
-
     // Count Up
     document.querySelectorAll('.data-number').forEach(num => {
         const target = parseFloat(num.dataset.target);
@@ -90,9 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: { trigger: num, start: "top 90%" },
             val: target, duration: 2.5,
             onUpdate: function() {
-                const decimals = (num.dataset.target || '').includes('.') ? (num.dataset.target.split('.')[1] || '').length : 0;
-                num.innerText = `${num.dataset.prefix || ''}${this.targets()[0].val.toFixed(Math.max(decimals, 1))}${num.dataset.suffix || ''}`;
+                const prefix = num.dataset.prefix || '';
+                const suffix = num.dataset.suffix || '';
+                num.innerText = `${prefix}${this.targets()[0].val.toFixed(1)}${suffix}`;
             }
         });
     });
+
+    // Initialize Canvas Components
+    new ConnectedVortex('hero-vortex');
+    new ConnectedVortex('cta-vortex', { dotColor: '212, 175, 55', cursorLineColor: '212, 175, 55' });
+    new ZodiacRing('zodiac-ring');
+    new ZodiacRing('cta-ring');
+    new RadarChart('fufire-radar');
+    if (document.getElementById('fusion-ring')) {
+        new FusionRing('fusion-ring');
+    }
 });

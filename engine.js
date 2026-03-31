@@ -13,7 +13,7 @@ class ConnectedVortex {
         this.nodes = [];
         this.mouse = { x: -2000, y: -2000 };
         this.config = {
-            nodeCount: isMobile ? 40 : 90,
+            nodeCount: isMobile ? 40 : 90, 
             attractRadius: 450,
             attractForce: 0.28,
             tangentForce: 0.75,
@@ -23,83 +23,70 @@ class ConnectedVortex {
             dotColor: '212, 175, 55',
             maxCursorAlpha: 0.28,
             maxNodeAlpha: 0.09,
-            cursorLineWidth: 0.7,
             ...config
         };
         this.init();
     }
-
     init() {
         this.resize();
         window.addEventListener('resize', () => this.resize());
-        window.addEventListener('mousemove', (e) => {
-            this.mouse.x = e.clientX;
-            this.mouse.y = e.clientY;
+        window.addEventListener('mousemove', (e) => { 
+            this.mouse.x = e.clientX; this.mouse.y = e.clientY; 
         });
-
         for (let i = 0; i < this.config.nodeCount; i++) {
             this.nodes.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5
+                vx: (Math.random() - 0.5) * 1.5,
+                vy: (Math.random() - 0.5) * 1.5
             });
         }
         this.animate();
     }
-
     resize() {
         if (!this.canvas.parentElement) return;
         const rect = this.canvas.parentElement.getBoundingClientRect();
         this.canvas.width = rect.width;
         this.canvas.height = rect.height;
     }
-
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        
-        this.nodes.forEach(node => {
-            const dx = this.mouse.x - node.x;
-            const dy = this.mouse.y - node.y;
+        for (let i = 0; i < this.nodes.length; i++) {
+            const nodeA = this.nodes[i];
+            const dx = this.mouse.x - nodeA.x;
+            const dy = this.mouse.y - nodeA.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < this.config.attractRadius) {
-                const force = (1 - dist / this.config.attractRadius) * this.config.attractForce;
-                node.vx += dx * force * 0.02;
-                node.vy += dy * force * 0.02;
+                const pct = (1 - dist / this.config.attractRadius);
+                nodeA.vx += dx * pct * 0.003;
+                nodeA.vy += dy * pct * 0.003;
+                nodeA.vx += (dy / dist) * this.config.tangentForce * pct;
+                nodeA.vy -= (dx / dist) * this.config.tangentForce * pct;
 
-
-                node.vx += (dy / dist) * this.config.tangentForce;
-                node.vy -= (dx / dist) * this.config.tangentForce;
-
-
-                const alpha = (1 - dist / this.config.attractRadius) * this.config.maxCursorAlpha;
                 this.ctx.beginPath();
-                this.ctx.strokeStyle = `rgba(${this.config.cursorLineColor}, ${alpha})`;
-                this.ctx.lineWidth = this.config.cursorLineWidth;
-                this.ctx.moveTo(node.x, node.y);
+                this.ctx.strokeStyle = `rgba(${this.config.cursorLineColor}, ${pct * this.config.maxCursorAlpha})`;
+                this.ctx.lineWidth = 0.7;
+                this.ctx.moveTo(nodeA.x, nodeA.y);
                 this.ctx.lineTo(this.mouse.x, this.mouse.y);
                 this.ctx.stroke();
             }
 
-            node.x += node.vx + this.config.baseSpeed;
-            node.y += node.vy;
-            node.vx *= this.config.friction;
-            node.vy *= this.config.friction;
+            nodeA.x += nodeA.vx + this.config.baseSpeed;
+            nodeA.y += nodeA.vy;
+            nodeA.vx *= this.config.friction;
+            nodeA.vy *= this.config.friction;
 
+            if (nodeA.x > this.canvas.width) nodeA.x = 0;
+            if (nodeA.x < 0) nodeA.x = this.canvas.width;
+            if (nodeA.y > this.canvas.height) nodeA.y = 0;
+            if (nodeA.y < 0) nodeA.y = this.canvas.height;
 
-            if (node.x > this.canvas.width) node.x = 0;
-            if (node.x < 0) node.x = this.canvas.width;
-            if (node.y > this.canvas.height) node.y = 0;
-            if (node.y < 0) node.y = this.canvas.height;
-
-
-            this.ctx.fillStyle = `rgba(${this.config.dotColor}, 0.5)`;
+            this.ctx.fillStyle = `rgba(${this.config.dotColor}, 0.6)`;
             this.ctx.beginPath();
-            this.ctx.arc(node.x, node.y, 1, 0, Math.PI * 2);
+            this.ctx.arc(nodeA.x, nodeA.y, 1.2, 0, Math.PI * 2);
             this.ctx.fill();
-        });
-
+        }
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -113,20 +100,17 @@ class ZodiacRing {
         this.angleInner = 0;
         this.animate();
     }
-
-    drawRing(radius, angle, ticks, opacity) {
+    drawRing(radius, angle, ticks, opacity, pattern = 'solid') {
         this.ctx.save();
         this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
         this.ctx.rotate(angle);
         this.ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
         this.ctx.lineWidth = 0.5;
         
-        // Main Circle
         this.ctx.beginPath();
         this.ctx.arc(0, 0, radius, 0, Math.PI * 2);
         this.ctx.stroke();
 
-        // Horology Ticks
         for (let i = 0; i < ticks; i++) {
             const a = (i * (360 / ticks)) * Math.PI / 180;
             const isMajor = i % (ticks / 12) === 0;
@@ -139,11 +123,10 @@ class ZodiacRing {
         }
         this.ctx.restore();
     }
-
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.angleOuter += 0.003;
-        this.angleInner -= 0.0015;
+        this.angleOuter += 0.003; 
+        this.angleInner -= 0.0015; 
         const scale = this.canvas.width / 600;
         this.drawRing(260 * scale, this.angleOuter, 60, 0.4);
         this.drawRing(230 * scale, this.angleInner, 24, 0.2);
@@ -154,8 +137,9 @@ class ZodiacRing {
 class RadarChart {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
-        this.values = [0.6, 0.8, 0.5, 0.9, 0.7]; // Wood, Fire, Earth, Metal, Water
+        this.values = [0.6, 0.8, 0.5, 0.9, 0.7]; 
         this.targetValues = [...this.values];
         this.labels = ['WOOD', 'FIRE', 'EARTH', 'METAL', 'WATER'];
         this.init();
@@ -171,8 +155,7 @@ class RadarChart {
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         const center = this.canvas.width / 2;
-        const radius = 120;
-
+        const radius = this.canvas.width * 0.35;
 
         this.ctx.strokeStyle = 'rgba(212, 175, 55, 0.1)';
         this.ctx.lineWidth = 1;
@@ -189,7 +172,6 @@ class RadarChart {
             this.ctx.stroke();
         }
 
-
         this.ctx.beginPath();
         this.ctx.fillStyle = 'rgba(212, 175, 55, 0.15)';
         this.ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
@@ -203,12 +185,12 @@ class RadarChart {
             if (i === 0) this.ctx.moveTo(x, y);
             else this.ctx.lineTo(x, y);
 
-
-            this.ctx.font = '8px monospace';
-            this.ctx.fillStyle = 'rgba(212, 175, 55, 0.6)';
-            const lx = center + Math.cos(angle) * (radius + 25);
-            const ly = center + Math.sin(angle) * (radius + 25);
-            this.ctx.fillText(this.labels[i], lx - 15, ly);
+            this.ctx.font = '10px monospace';
+            this.ctx.fillStyle = 'rgba(212, 175, 55, 0.9)';
+            const lx = center + Math.cos(angle) * (radius + 20);
+            const ly = center + Math.sin(angle) * (radius + 20);
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText(this.labels[i], lx, ly);
         }
         this.ctx.closePath();
         this.ctx.fill();
@@ -221,6 +203,7 @@ class RadarChart {
 class FusionRing {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
         this.time = 0;
         this.animate();
@@ -229,22 +212,18 @@ class FusionRing {
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.time += 0.01;
-        const center = { x: 200, y: 200 };
+        const center = { x: this.canvas.width / 2, y: this.canvas.height / 2 };
 
         this.ctx.lineWidth = 1.5;
-        
-
         this.ctx.strokeStyle = 'rgba(99, 102, 241, 0.4)';
         this.ctx.beginPath();
         this.ctx.ellipse(center.x, center.y, 160, 80 + Math.sin(this.time) * 10, this.time * 0.2, 0, Math.PI * 2);
         this.ctx.stroke();
 
-
         this.ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
         this.ctx.beginPath();
         this.ctx.ellipse(center.x, center.y, 120, 60 + Math.cos(this.time) * 5, -this.time * 0.4, 0, Math.PI * 2);
         this.ctx.stroke();
-
 
         const grad = this.ctx.createRadialGradient(center.x, center.y, 0, center.x, center.y, 40);
         grad.addColorStop(0, 'rgba(212, 175, 55, 0.2)');
@@ -258,16 +237,4 @@ class FusionRing {
     }
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    new ConnectedVortex('hero-vortex', {
-        cursorLineColor: '99, 102, 241', dotColor: '212, 175, 55'
-    });
-    new ConnectedVortex('cta-vortex', {
-        dotColor: '212, 175, 55', cursorLineColor: '212, 175, 55'
-    });
-    new ZodiacRing('zodiac-ring');
-    new ZodiacRing('cta-ring');
-    new RadarChart('fufire-radar');
-    new FusionRing('fusion-ring'); 
-});
+export { ConnectedVortex, ZodiacRing, RadarChart, FusionRing };
