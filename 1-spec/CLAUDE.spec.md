@@ -134,6 +134,18 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | [REQ-F-investor-cta-accessibility](requirements/REQ-F-investor-cta-accessibility.md) | Functional | Must-have | Draft | Investor CTA reachable from hero, confirmation on submit |
 | [REQ-F-narrative-section-order](requirements/REQ-F-narrative-section-order.md) | Functional | Must-have | Draft | 7-section narrative arc: Hero→Problem→Product→Proof→Opportunity→Risk→Ask |
 | [REQ-F-section-navigation](requirements/REQ-F-section-navigation.md) | Functional | Should-have | Draft | Mobile nav dots and anchor links for all 7 sections |
+| [REQ-F-source-attribution-all-figures](requirements/REQ-F-source-attribution-all-figures.md) | Functional | Must-have | Draft | Every numerical claim has visible source attribution within 50px |
+| [REQ-F-fufire-formula-correct](requirements/REQ-F-fufire-formula-correct.md) | Functional | Must-have | Draft | Signal formula mathematically correct: weights=1.0, R⁵/S⁴ accurate |
+| [REQ-F-fufire-plain-language](requirements/REQ-F-fufire-plain-language.md) | Functional | Must-have | Draft | Plain-language explanation of W, B, X, weights, and Signal output |
+| [REQ-F-coherence-index-defined](requirements/REQ-F-coherence-index-defined.md) | Functional | Should-have | Draft | H defined with range [0,1], interpretation, simulated label |
+| [REQ-F-persona-cards-section](requirements/REQ-F-persona-cards-section.md) | Functional | Must-have | Draft | New section with 4 persona cards + monetization role matrix |
+| [REQ-F-segment-contrast-display](requirements/REQ-F-segment-contrast-display.md) | Functional | Must-have | Draft | Visual comparison: framework-curious vs. entertainment-astrology segment |
+| [REQ-F-unit-economics-display](requirements/REQ-F-unit-economics-display.md) | Functional | Must-have | Draft | CAC/LTV/retention/conversion targets, all labeled preliminary |
+| [REQ-F-pricing-tiers-display](requirements/REQ-F-pricing-tiers-display.md) | Functional | Must-have | Draft | 3-tier model (Free/Essentials/Premium) with features and benchmarks |
+| [REQ-USA-deep-tech-first-impression](requirements/REQ-USA-deep-tech-first-impression.md) | Usability | Must-have | Draft | Design signals technology before astrology, no prohibited visual elements |
+| [REQ-PERF-canvas-30fps](requirements/REQ-PERF-canvas-30fps.md) | Performance | Must-have | Draft | All canvas visualizations ≥30fps on MacBook Air M1 / iPhone 13+ |
+| [REQ-USA-mobile-premium-experience](requirements/REQ-USA-mobile-premium-experience.md) | Usability | Must-have | Draft | Mobile layout: no h-scroll, no hidden sections, ≥44px inputs |
+| [REQ-PERF-mobile-load-3s](requirements/REQ-PERF-mobile-load-3s.md) | Performance | Must-have | Draft | FCP ≤3s on 4G, initial load <500KB |
 
 ---
 

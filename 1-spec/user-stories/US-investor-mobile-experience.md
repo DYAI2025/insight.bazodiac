@@ -21,4 +21,5 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-USA-mobile-premium-experience](../requirements/REQ-USA-mobile-premium-experience.md)
+- [REQ-PERF-mobile-load-3s](../requirements/REQ-PERF-mobile-load-3s.md)

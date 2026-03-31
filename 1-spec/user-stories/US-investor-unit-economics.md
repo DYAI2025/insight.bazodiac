@@ -22,4 +22,5 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-unit-economics-display](../requirements/REQ-F-unit-economics-display.md)
+- [REQ-F-pricing-tiers-display](../requirements/REQ-F-pricing-tiers-display.md)

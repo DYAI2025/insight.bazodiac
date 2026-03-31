@@ -19,4 +19,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-segment-contrast-display](../requirements/REQ-F-segment-contrast-display.md)

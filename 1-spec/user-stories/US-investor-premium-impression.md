@@ -19,4 +19,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-USA-deep-tech-first-impression](../requirements/REQ-USA-deep-tech-first-impression.md)

@@ -20,4 +20,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-PERF-canvas-30fps](../requirements/REQ-PERF-canvas-30fps.md)

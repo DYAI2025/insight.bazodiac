@@ -19,4 +19,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-persona-cards-section](../requirements/REQ-F-persona-cards-section.md)

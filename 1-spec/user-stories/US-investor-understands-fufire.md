@@ -20,4 +20,5 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-fufire-formula-correct](../requirements/REQ-F-fufire-formula-correct.md)
+- [REQ-F-fufire-plain-language](../requirements/REQ-F-fufire-plain-language.md)
