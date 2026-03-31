@@ -104,7 +104,21 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Role | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-<!-- No user stories defined yet. Run /SDLC-elicit to create user stories. -->
+| [US-investor-understands-product](user-stories/US-investor-understands-product.md) | STK-investor | Must-have | Draft | Understand what BAZODIAC does within 60 seconds of landing |
+| [US-investor-competitive-positioning](user-stories/US-investor-competitive-positioning.md) | STK-investor | Must-have | Draft | See honest positioning against Cosmic Fusion with attack strategy |
+| [US-investor-clear-ask](user-stories/US-investor-clear-ask.md) | STK-investor | Must-have | Draft | Find a clear CTA (meeting/contact) without scrolling the entire page |
+| [US-investor-narrative-arc](user-stories/US-investor-narrative-arc.md) | STK-investor | Must-have | Draft | Follow problem → product → proof → opportunity → risk → ask in one scroll |
+| [US-investor-verifiable-market-claims](user-stories/US-investor-verifiable-market-claims.md) | STK-investor | Must-have | Draft | Every market figure has a named research source with year |
+| [US-investor-understands-fufire](user-stories/US-investor-understands-fufire.md) | STK-investor | Must-have | Draft | See FuFirE formula with correct math and plain-language explanation |
+| [US-investor-coherence-index](user-stories/US-investor-coherence-index.md) | STK-investor | Should-have | Draft | Understand Coherence Index H — range, meaning, interpretation |
+| [US-investor-sees-personas](user-stories/US-investor-sees-personas.md) | STK-investor | Must-have | Draft | See four personas with demographic detail and monetization roles |
+| [US-investor-segment-contrast](user-stories/US-investor-segment-contrast.md) | STK-investor | Must-have | Draft | Explicit contrast: framework-curious segment ≠ Co-Star entertainment users |
+| [US-investor-unit-economics](user-stories/US-investor-unit-economics.md) | STK-investor | Must-have | Draft | See 3-tier pricing with preliminary unit economics and benchmarks |
+| [US-investor-premium-impression](user-stories/US-investor-premium-impression.md) | STK-investor | Must-have | Draft | First impression says "deep tech / fintech", not "astrology app" |
+| [US-investor-interactive-proof](user-stories/US-investor-interactive-proof.md) | STK-investor | Must-have | Draft | Smooth interactive canvas visualizations proving technical capability |
+| [US-investor-mobile-experience](user-stories/US-investor-mobile-experience.md) | STK-investor | Must-have | Draft | Premium experience on phone — shareable link that impresses on any device |
+| [US-investor-sees-risk-framework](user-stories/US-investor-sees-risk-framework.md) | STK-investor | Must-have | Draft | Honest risk assessment with defense lines, KPIs, and kill criteria |
+| [US-investor-sees-pivot-plans](user-stories/US-investor-sees-pivot-plans.md) | STK-investor | Must-have | Draft | Concrete fallback plans (FaaS B2B, volume pivot) if assumptions fail |
 
 ---
 
