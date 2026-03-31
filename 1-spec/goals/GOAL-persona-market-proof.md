@@ -19,5 +19,7 @@
 
 ## Related Artifacts
 
-- User stories: _none yet_
+- User stories: [US-investor-sees-personas](../user-stories/US-investor-sees-personas.md), [US-investor-segment-contrast](../user-stories/US-investor-segment-contrast.md), [US-investor-unit-economics](../user-stories/US-investor-unit-economics.md)
 - Requirements: _none yet_
+- Constraints: [CON-cosmic-fusion-incumbent](../constraints/CON-cosmic-fusion-incumbent.md)
+- Assumptions: [ASM-framework-segment-higher-wtp](../assumptions/ASM-framework-segment-higher-wtp.md), [ASM-cac-under-three](../assumptions/ASM-cac-under-three.md), [ASM-ltv-range-plausible](../assumptions/ASM-ltv-range-plausible.md)

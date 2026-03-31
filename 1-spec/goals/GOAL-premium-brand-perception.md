@@ -20,5 +20,6 @@
 
 ## Related Artifacts
 
-- User stories: _none yet_
+- User stories: [US-investor-premium-impression](../user-stories/US-investor-premium-impression.md), [US-investor-interactive-proof](../user-stories/US-investor-interactive-proof.md), [US-investor-mobile-experience](../user-stories/US-investor-mobile-experience.md)
 - Requirements: _none yet_
+- Constraints: [CON-static-frontend-only](../constraints/CON-static-frontend-only.md)

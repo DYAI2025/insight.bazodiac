@@ -40,5 +40,5 @@ The competitive analysis identified that FuFirE suffers from Overconfidence Bias
 - Assumptions: [ASM-fufire-substance-over-cosmic-ux](../assumptions/ASM-fufire-substance-over-cosmic-ux.md), [ASM-framework-segment-higher-wtp](../assumptions/ASM-framework-segment-higher-wtp.md)
 - Constraints: [CON-90-day-kill-discipline](../constraints/CON-90-day-kill-discipline.md), [CON-cosmic-fusion-incumbent](../constraints/CON-cosmic-fusion-incumbent.md), [CON-no-overclaiming](../constraints/CON-no-overclaiming.md)
 - Goals: [GOAL-investor-conviction](../goals/GOAL-investor-conviction.md), [GOAL-math-transparency](../goals/GOAL-math-transparency.md)
-- User stories: _none yet_
+- User stories: [US-investor-sees-risk-framework](../user-stories/US-investor-sees-risk-framework.md), [US-investor-sees-pivot-plans](../user-stories/US-investor-sees-pivot-plans.md)
 - Requirements: _none yet_

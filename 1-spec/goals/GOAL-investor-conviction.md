@@ -18,5 +18,5 @@
 
 ## Related Artifacts
 
-- User stories: _none yet_
+- User stories: [US-investor-understands-product](../user-stories/US-investor-understands-product.md), [US-investor-competitive-positioning](../user-stories/US-investor-competitive-positioning.md), [US-investor-clear-ask](../user-stories/US-investor-clear-ask.md), [US-investor-narrative-arc](../user-stories/US-investor-narrative-arc.md)
 - Requirements: _none yet_

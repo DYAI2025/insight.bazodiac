@@ -19,7 +19,7 @@
 
 ## Related Artifacts
 
-- User stories: _none yet_
+- User stories: [US-investor-verifiable-market-claims](../user-stories/US-investor-verifiable-market-claims.md), [US-investor-understands-fufire](../user-stories/US-investor-understands-fufire.md), [US-investor-coherence-index](../user-stories/US-investor-coherence-index.md)
 - Requirements: _none yet_
-- Constraints: [CON-subscription-not-onetime](../constraints/CON-subscription-not-onetime.md)
-- Assumptions: [ASM-preliminary-pricing](../assumptions/ASM-preliminary-pricing.md)
+- Constraints: [CON-subscription-not-onetime](../constraints/CON-subscription-not-onetime.md), [CON-single-source-market-data](../constraints/CON-single-source-market-data.md), [CON-no-unattributed-projections](../constraints/CON-no-unattributed-projections.md), [CON-no-overclaiming](../constraints/CON-no-overclaiming.md)
+- Assumptions: [ASM-preliminary-pricing](../assumptions/ASM-preliminary-pricing.md), [ASM-market-size-defensible](../assumptions/ASM-market-size-defensible.md)

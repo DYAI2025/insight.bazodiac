@@ -36,4 +36,7 @@ A subscription model aligns with the product's value proposition:
 
 ## Related Artifacts
 
-- _none yet_
+- [ASM-preliminary-pricing](../assumptions/ASM-preliminary-pricing.md)
+- [ASM-framework-segment-higher-wtp](../assumptions/ASM-framework-segment-higher-wtp.md)
+- [ASM-ltv-range-plausible](../assumptions/ASM-ltv-range-plausible.md)
+- [GOAL-math-transparency](../goals/GOAL-math-transparency.md)
