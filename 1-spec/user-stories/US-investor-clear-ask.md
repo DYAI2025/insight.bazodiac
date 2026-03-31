@@ -19,4 +19,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-investor-cta-accessibility](../requirements/REQ-F-investor-cta-accessibility.md)

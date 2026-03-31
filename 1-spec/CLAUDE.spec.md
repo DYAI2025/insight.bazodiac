@@ -127,6 +127,13 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
 | [REQ-F-noindex-enforcement](requirements/REQ-F-noindex-enforcement.md) | Functional | Must-have | Draft | Page must have `noindex, nofollow` meta tag (already implemented) |
+| [REQ-F-replace-overclaiming-language](requirements/REQ-F-replace-overclaiming-language.md) | Functional | Must-have | Draft | Audit and replace prohibited superlatives and mythopoetic terms |
+| [REQ-F-reconciled-market-figures](requirements/REQ-F-reconciled-market-figures.md) | Functional | Must-have | Draft | Display reconciled $14.3B/$4.73B market data with source attribution |
+| [REQ-F-hero-60s-comprehension](requirements/REQ-F-hero-60s-comprehension.md) | Functional | Must-have | Draft | Hero + first section communicate product in under 60 seconds |
+| [REQ-F-competitive-positioning-section](requirements/REQ-F-competitive-positioning-section.md) | Functional | Must-have | Draft | Competitive analysis section naming Cosmic Fusion with attack strategy |
+| [REQ-F-investor-cta-accessibility](requirements/REQ-F-investor-cta-accessibility.md) | Functional | Must-have | Draft | Investor CTA reachable from hero, confirmation on submit |
+| [REQ-F-narrative-section-order](requirements/REQ-F-narrative-section-order.md) | Functional | Must-have | Draft | 7-section narrative arc: Hero→Problem→Product→Proof→Opportunity→Risk→Ask |
+| [REQ-F-section-navigation](requirements/REQ-F-section-navigation.md) | Functional | Should-have | Draft | Mobile nav dots and anchor links for all 7 sections |
 
 ---
 

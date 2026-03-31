@@ -18,4 +18,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-hero-60s-comprehension](../requirements/REQ-F-hero-60s-comprehension.md)

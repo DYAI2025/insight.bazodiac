@@ -19,4 +19,4 @@
 
 ## Derived Requirements
 
-- _none yet_
+- [REQ-F-competitive-positioning-section](../requirements/REQ-F-competitive-positioning-section.md)
