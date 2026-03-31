@@ -3,19 +3,27 @@
  * Handles complex vortex, ring, and radar visualizations
  */
 
+const isMobile = window.innerWidth < 768;
+
 class ConnectedVortex {
     constructor(canvasId, config) {
         this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
         this.nodes = [];
-        this.mouse = { x: -1000, y: -1000 };
+        this.mouse = { x: -2000, y: -2000 };
         this.config = {
-            nodeCount: 90,
+            nodeCount: isMobile ? 40 : 90,
             attractRadius: 450,
             attractForce: 0.28,
             tangentForce: 0.75,
             friction: 0.96,
             baseSpeed: 0.12,
+            cursorLineColor: '99, 102, 241',
+            dotColor: '212, 175, 55',
+            maxCursorAlpha: 0.28,
+            maxNodeAlpha: 0.09,
+            cursorLineWidth: 0.7,
             ...config
         };
         this.init();
@@ -41,8 +49,10 @@ class ConnectedVortex {
     }
 
     resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        if (!this.canvas.parentElement) return;
+        const rect = this.canvas.parentElement.getBoundingClientRect();
+        this.canvas.width = rect.width;
+        this.canvas.height = rect.height;
     }
 
     animate() {
@@ -97,32 +107,34 @@ class ConnectedVortex {
 class ZodiacRing {
     constructor(canvasId) {
         this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
         this.angleOuter = 0;
         this.angleInner = 0;
         this.animate();
     }
 
-    drawRing(radius, angle, speed, ticks) {
+    drawRing(radius, angle, ticks, opacity) {
         this.ctx.save();
         this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
         this.ctx.rotate(angle);
+        this.ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
+        this.ctx.lineWidth = 0.5;
         
+        // Main Circle
         this.ctx.beginPath();
         this.ctx.arc(0, 0, radius, 0, Math.PI * 2);
-        this.ctx.strokeStyle = 'rgba(212, 175, 55, 0.15)';
         this.ctx.stroke();
 
-        for (let i = 0; i < 360; i += 360 / ticks) {
-            const rad = i * Math.PI / 180;
-            const x1 = Math.cos(rad) * radius;
-            const y1 = Math.sin(rad) * radius;
-            const x2 = Math.cos(rad) * (radius - 10);
-            const y2 = Math.sin(rad) * (radius - 10);
-            
+        // Horology Ticks
+        for (let i = 0; i < ticks; i++) {
+            const a = (i * (360 / ticks)) * Math.PI / 180;
+            const isMajor = i % (ticks / 12) === 0;
+            const len = isMajor ? 12 : 5;
             this.ctx.beginPath();
-            this.ctx.moveTo(x1, y1);
-            this.ctx.lineTo(x2, y2);
+            this.ctx.moveTo(Math.cos(a) * radius, Math.sin(a) * radius);
+            this.ctx.lineTo(Math.cos(a) * (radius - len), Math.sin(a) * (radius - len));
+            this.ctx.lineWidth = isMajor ? 1 : 0.5;
             this.ctx.stroke();
         }
         this.ctx.restore();
@@ -132,10 +144,9 @@ class ZodiacRing {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.angleOuter += 0.003;
         this.angleInner -= 0.0015;
-        
-        this.drawRing(210, this.angleOuter, 1, 12);
-        this.drawRing(180, this.angleInner, -0.5, 24);
-        
+        const scale = this.canvas.width / 600;
+        this.drawRing(260 * scale, this.angleOuter, 60, 0.4);
+        this.drawRing(230 * scale, this.angleInner, 24, 0.2);
         requestAnimationFrame(() => this.animate());
     }
 }
@@ -250,13 +261,13 @@ class FusionRing {
 
 document.addEventListener('DOMContentLoaded', () => {
     new ConnectedVortex('hero-vortex', {
-        nodeCount: 90, attractRadius: 450, cursorLineColor: '99, 102, 241', dotColor: '212, 175, 55', maxCursorAlpha: 0.28
+        cursorLineColor: '99, 102, 241', dotColor: '212, 175, 55'
     });
     new ConnectedVortex('cta-vortex', {
-        nodeCount: 60, attractRadius: 400, cursorLineColor: '212, 175, 55', dotColor: '212, 175, 55', maxCursorAlpha: 0.2
+        dotColor: '212, 175, 55', cursorLineColor: '212, 175, 55'
     });
     new ZodiacRing('zodiac-ring');
     new ZodiacRing('cta-ring');
     new RadarChart('fufire-radar');
-    new FusionRing('fusion-ring');
+    new FusionRing('fusion-ring'); 
 });

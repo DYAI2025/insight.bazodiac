@@ -3,222 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BAZODIAC — The world's first mathematical fusion of Western Astrology, Chinese BaZi, and Wu-Xing into a single auditable signal.">
     <meta name="robots" content="noindex, nofollow">
+    
     <title>BAZODIAC — Your Signal. Decoded.</title>
+    
+    <!-- External Assets -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <style>
-        :root {
-            --bg: #05070a;
-            --gold-primary: #D4AF37;
-            /* Neo Luxury: Gold Leaf Gradient */
-            --gold-leaf: linear-gradient(135deg, #CF995F 0%, #F1D18A 50%, #D4AF37 100%);
-            --indigo: #6366f1;
-            --text: #f8f9fa;
-            --muted: rgba(255, 255, 255, 0.4);
-        }
-
-        * { cursor: none !important; margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            overflow-x: hidden;
-            line-height: 1.9;
-        }
-
-        /* Pulse Background - The 'Breath' of FuFirE */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 70%);
-            z-index: -1;
-            animation: pulse-breath 8s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        @keyframes pulse-breath {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.7; transform: scale(1.1); }
-        }
-
-        .mono { font-family: 'SF Mono', 'Fira Code', monospace; }
-
-        /* Gold Leaf Headlines */
-        .gold-leaf-text {
-            background: var(--gold-leaf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        h1, h2, h3, .headline {
-            font-weight: 200;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-size: clamp(1.4rem, 3vw, 2.2rem);
-            letter-spacing: 0.4em;
-        }
-
-        .data-number {
-            font-weight: 700;
-            background: var(--gold-leaf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            line-height: 1;
-        }
-
-        .tech-label {
-            font-size: 10px;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-        }
-
-        /* Texture Layers */
-        .film-grain {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-            opacity: 0.025;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        }
-
-        /* Vignette follows NebulaLens */
-        .vignette {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), transparent 20%, rgba(5,7,10,0.4) 100%);
-            z-index: 9997;
-            pointer-events: none;
-        }
-
-        .nebula-lens {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(50px);
-            pointer-events: none;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-        }
-
-        .custom-cursor {
-            position: fixed;
-            width: 4px; height: 4px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transform: translate(-50%, -50%);
-        }
-
-        .cursor-ring {
-            position: fixed;
-            width: 40px; height: 40px;
-            border: 1px solid rgba(212, 175, 55, 0);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transform: translate(-50%, -50%) scale(0.5);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
-        }
-
-        .interactive:hover ~ .cursor-ring, .cursor-ring.active {
-            transform: translate(-50%, -50%) scale(1.2);
-            border-color: rgba(212, 175, 55, 1);
-        }
-
-        /* Enhanced Glass - Obsidian Depth */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px) saturate(180%);
-            -webkit-backdrop-filter: blur(12px) saturate(180%);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            position: relative;
-        }
-        
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gold-leaf);
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        .btn-primary {
-            border: 1px solid var(--gold-primary);
-            color: var(--gold-primary);
-            padding: 14px 44px;
-            letter-spacing: 0.2em;
-            font-size: 11px;
-            text-transform: uppercase;
-            background: transparent;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .btn-primary:hover {
-            background: var(--gold-primary);
-            color: var(--bg);
-        }
-
-        /* Coherence Indicator */
-        #coherence-indicator {
-            position: fixed;
-            top: 20px; right: 20px;
-            z-index: 10000;
-            color: var(--gold-primary);
-            opacity: 0.6;
-            font-size: 10px;
-        }
-
-        /* Mobile Nav */
-        .mobile-nav {
-            position: fixed;
-            bottom: 20px; left: 50%;
-            transform: translateX(-50%);
-            z-index: 10000;
-            display: flex;
-            gap: 12px;
-            padding: 8px 20px;
-            background: rgba(5, 7, 10, 0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 100px;
-        }
-        
-        .nav-dot {
-            width: 6px; height: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        .nav-dot.active {
-            background: var(--gold-primary);
-            box-shadow: 0 0 10px var(--gold-primary);
-            transform: scale(1.4);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-reverse { flex-direction: column-reverse; }
-            .mobile-hide { display: none; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            canvas, .film-grain, .vignette { display: none !important; }
-        }
-    </style>
+    
+    <!-- Visual Engine & Logic -->
+    <script type="module" src="engine.js"></script>
+    <script type="module" src="interactions.js"></script>
 </head>
 <body class="selection:bg-indigo-500/30">
     <div class="film-grain"></div>
@@ -232,9 +32,9 @@
 
     <!-- Mobile Navigation -->
     <nav class="mobile-nav md:hidden">
-        <a href="#" class="nav-dot active"></a>
-        <a href="#fufire" class="nav-dot"></a>
-        <a href="#market" class="nav-dot"></a>
+        <a href="#" class="nav-dot active" title="Top"></a>
+        <a href="#fufire" class="nav-dot" title="FuFirE"></a>
+        <a href="#market" class="nav-dot" title="Market"></a>
     </nav>
 
     <!-- SECTION 1: HERO -->
@@ -242,7 +42,7 @@
         <canvas id="hero-vortex" class="absolute inset-0 z-0"></canvas>
         
         <div class="relative z-10 flex flex-col items-center max-w-5xl">
-            <span class="tech-label mb-12 opacity-0 translate-y-4" style="color: rgba(255,255,255,0.4)">Confidential Preview · March 2026</span>
+            <span class="tech-label mb-12 opacity-0 translate-y-4 text-white/40">Confidential Preview · March 2026</span>
             
             <div class="relative mb-8 flex items-center justify-center h-[300px] w-full">
                 <canvas id="zodiac-ring" width="600" height="600" class="absolute pointer-events-none"></canvas>
@@ -409,216 +209,7 @@
         </p>
     </footer>
 
-    <script type="module">
-        /**
-         * Neo's Production Refinement
-         */
-
-        const isMobile = window.innerWidth < 768;
-
-        class ConnectedVortex {
-            constructor(canvasId, config) {
-                this.canvas = document.getElementById(canvasId);
-                if (!this.canvas) return;
-                this.ctx = this.canvas.getContext('2d');
-                this.nodes = [];
-                this.mouse = { x: -2000, y: -2000 };
-                this.config = {
-                    nodeCount: isMobile ? 40 : 90, // Scale down for performance
-                    attractRadius: 450,
-                    attractForce: 0.28,
-                    tangentForce: 0.75,
-                    friction: 0.96,
-                    baseSpeed: 0.12,
-                    cursorLineColor: '99, 102, 241',
-                    dotColor: '212, 175, 55',
-                    maxCursorAlpha: 0.28,
-                    maxNodeAlpha: 0.09,
-                    ...config
-                };
-                this.init();
-            }
-            init() {
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
-                window.addEventListener('mousemove', (e) => { 
-                    this.mouse.x = e.clientX; this.mouse.y = e.clientY; 
-                });
-                for (let i = 0; i < this.config.nodeCount; i++) {
-                    this.nodes.push({
-                        x: Math.random() * this.canvas.width,
-                        y: Math.random() * this.canvas.height,
-                        vx: (Math.random() - 0.5) * 1.5,
-                        vy: (Math.random() - 0.5) * 1.5
-                    });
-                }
-                this.animate();
-            }
-            resize() {
-                const rect = this.canvas.parentElement.getBoundingClientRect();
-                this.canvas.width = rect.width;
-                this.canvas.height = rect.height;
-            }
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                for (let i = 0; i < this.nodes.length; i++) {
-                    const nodeA = this.nodes[i];
-                    const dx = this.mouse.x - nodeA.x;
-                    const dy = this.mouse.y - nodeA.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < this.config.attractRadius) {
-                        const pct = (1 - dist / this.config.attractRadius);
-                        nodeA.vx += dx * pct * 0.003;
-                        nodeA.vy += dy * pct * 0.003;
-                        nodeA.vx += (dy / dist) * this.config.tangentForce * pct;
-                        nodeA.vy -= (dx / dist) * this.config.tangentForce * pct;
-
-                        this.ctx.beginPath();
-                        this.ctx.strokeStyle = `rgba(${this.config.cursorLineColor}, ${pct * this.config.maxCursorAlpha})`;
-                        this.ctx.lineWidth = 0.7;
-                        this.ctx.moveTo(nodeA.x, nodeA.y);
-                        this.ctx.lineTo(this.mouse.x, this.mouse.y);
-                        this.ctx.stroke();
-                    }
-
-                    nodeA.x += nodeA.vx + this.config.baseSpeed;
-                    nodeA.y += nodeA.vy;
-                    nodeA.vx *= this.config.friction;
-                    nodeA.vy *= this.config.friction;
-
-                    if (nodeA.x > this.canvas.width) nodeA.x = 0;
-                    if (nodeA.x < 0) nodeA.x = this.canvas.width;
-                    if (nodeA.y > this.canvas.height) nodeA.y = 0;
-                    if (nodeA.y < 0) nodeA.y = this.canvas.height;
-
-                    this.ctx.fillStyle = `rgba(${this.config.dotColor}, 0.6)`;
-                    this.ctx.beginPath();
-                    this.ctx.arc(nodeA.x, nodeA.y, 1.2, 0, Math.PI * 2);
-                    this.ctx.fill();
-                }
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        class ZodiacRing {
-            constructor(canvasId) {
-                this.canvas = document.getElementById(canvasId);
-                if (!this.canvas) return;
-                this.ctx = this.canvas.getContext('2d');
-                this.angleOuter = 0;
-                this.angleInner = 0;
-                this.animate();
-            }
-            drawRing(radius, angle, ticks, opacity, pattern = 'solid') {
-                this.ctx.save();
-                this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
-                this.ctx.rotate(angle);
-                this.ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
-                this.ctx.lineWidth = 0.5;
-                
-                // Main Circle
-                this.ctx.beginPath();
-                this.ctx.arc(0, 0, radius, 0, Math.PI * 2);
-                this.ctx.stroke();
-
-                // Horology Ticks
-                for (let i = 0; i < ticks; i++) {
-                    const a = (i * (360 / ticks)) * Math.PI / 180;
-                    const isMajor = i % (ticks / 12) === 0;
-                    const len = isMajor ? 12 : 5;
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(Math.cos(a) * radius, Math.sin(a) * radius);
-                    this.ctx.lineTo(Math.cos(a) * (radius - len), Math.sin(a) * (radius - len));
-                    this.ctx.lineWidth = isMajor ? 1 : 0.5;
-                    this.ctx.stroke();
-                }
-                this.ctx.restore();
-            }
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                this.angleOuter += 0.003; 
-                this.angleInner -= 0.0015; 
-                const scale = this.canvas.width / 600;
-                this.drawRing(260 * scale, this.angleOuter, 60, 0.4);
-                this.drawRing(230 * scale, this.angleInner, 24, 0.2);
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            gsap.registerPlugin(ScrollTrigger);
-
-            const cursor = document.getElementById('custom-cursor');
-            const ring = document.getElementById('cursor-ring');
-            const lens = document.getElementById('nebula-lens');
-            const vig = document.getElementById('vignette');
-            
-            window.addEventListener('mousemove', (e) => {
-                gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
-                gsap.to(ring, { x: e.clientX, y: e.clientY, duration: 0.2 });
-                gsap.to(lens, { x: e.clientX, y: e.clientY, duration: 1.2, ease: "power2.out" });
-                vig.style.setProperty('--mouse-x', `${e.clientX}px`);
-                vig.style.setProperty('--mouse-y', `${e.clientY}px`);
-            });
-
-            // Scramble/Decode Animation
-            const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
-            document.querySelectorAll('.decode-title').forEach(title => {
-                const originalText = title.dataset.text;
-                ScrollTrigger.create({
-                    trigger: title,
-                    start: "top 90%",
-                    onEnter: () => {
-                        let iteration = 0;
-                        const interval = setInterval(() => {
-                            title.innerText = originalText.split("").map((char, index) => {
-                                if(index < iteration) return originalText[index];
-                                return chars[Math.floor(Math.random() * 44)];
-                            }).join("");
-                            if(iteration >= originalText.length) clearInterval(interval);
-                            iteration += 1 / 3;
-                        }, 30);
-                    }
-                });
-            });
-
-            // Coherence Index Simulation
-            const coh = document.getElementById('coherence-indicator');
-            let lastScroll = 0;
-            window.addEventListener('scroll', () => {
-                const speed = Math.abs(window.scrollY - lastScroll);
-                const val = (0.94 + (speed / 1000) + (new Date().getSeconds() / 1000)).toFixed(4);
-                coh.innerText = `H: ${val}`;
-                lastScroll = window.scrollY;
-            });
-
-            // Initial Entrance
-            const tl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1.2 }});
-            tl.to('.tech-label', { opacity: 1, y: 0, stagger: 0.2, delay: 0.5 })
-              .to('.hero-title', { opacity: 1, y: 0 }, "-=1")
-              .to('.hero-rule', { opacity: 1, width: 120 }, "-=0.8")
-              .to('.hero-sub', { opacity: 1, y: 0 }, "-=0.8")
-              .to('.hero-cta', { opacity: 1, y: 0 }, "-=0.8");
-
-            // Count Up
-            document.querySelectorAll('.data-number').forEach(num => {
-                const target = parseFloat(num.dataset.target);
-                gsap.to({ val: 0 }, {
-                    scrollTrigger: { trigger: num, start: "top 90%" },
-                    val: target, duration: 2.5,
-                    onUpdate: function() {
-                        const decimals = (num.dataset.target || '').includes('.') ? (num.dataset.target.split('.')[1] || '').length : 0;
-                        num.innerText = `${num.dataset.prefix || ''}${this.targets()[0].val.toFixed(Math.max(decimals, 1))}${num.dataset.suffix || ''}`;
-                    }
-                });
-            });
-
-            new ConnectedVortex('hero-vortex');
-            new ConnectedVortex('cta-vortex', { dotColor: '212, 175, 55', cursorLineColor: '212, 175, 55' });
-            new ZodiacRing('zodiac-ring');
-            new ZodiacRing('cta-ring');
-        });
-    </script>
+    <script type="module" src="engine.js"></script>
+    <script type="module" src="interactions.js"></script>
 </body>
 </html>
