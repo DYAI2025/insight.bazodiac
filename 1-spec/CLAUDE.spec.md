@@ -92,7 +92,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Priority | Status | Summary |
 |------|----------|--------|---------|
-| [GOAL-paid-api-readiness](goals/GOAL-paid-api-readiness.md) | Must-have | Draft | Bring FuFirE to production quality for paid B2B API launch |
+<!-- No goals defined yet. Run /SDLC-elicit to create goals. -->
 
 ---
 
@@ -100,12 +100,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Role | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-| [US-accurate-aspects](user-stories/US-accurate-aspects.md) | STK-api-consumer | Must-have | Draft | Differentiated aspect orbs per planet pair |
-| [US-full-transit-planets](user-stories/US-full-transit-planets.md) | STK-api-consumer | Must-have | Draft | Uranus, Neptune, Pluto in transit calculations |
-| [US-precise-daily-jieqi](user-stories/US-precise-daily-jieqi.md) | STK-astrologer | Must-have | Draft | Astronomically precise Jieqi in daily eastern |
-| [US-accurate-rate-limits](user-stories/US-accurate-rate-limits.md) | STK-api-consumer | Must-have | Draft | Accurate per-key rate limit tracking |
-| [US-transparent-fusion](user-stories/US-transparent-fusion.md) | STK-api-consumer | Should-have | Draft | Full parameter transparency in provenance |
-| [US-honest-feature-scope](user-stories/US-honest-feature-scope.md) | STK-api-consumer | Must-have | Draft | Remove or implement permanently-null fields |
+<!-- No user stories defined yet. Run /SDLC-elicit to create user stories. -->
 
 ---
 
@@ -113,12 +108,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-| [REQ-F-differentiated-orbs](requirements/REQ-F-differentiated-orbs.md) | Functional | Must-have | Draft | Planet-specific aspect orb table |
-| [REQ-F-outer-planet-transits](requirements/REQ-F-outer-planet-transits.md) | Functional | Must-have | Draft | Outer planets in transit calculations |
-| [REQ-F-precise-jieqi-daily](requirements/REQ-F-precise-jieqi-daily.md) | Functional | Must-have | Draft | Swiss Ephemeris Jieqi in daily eastern |
-| [REQ-F-persistent-rate-limits](requirements/REQ-F-persistent-rate-limits.md) | Functional | Must-have | Draft | Persistent per-key rate limit counters |
-| [REQ-F-provenance-soulprint-weights](requirements/REQ-F-provenance-soulprint-weights.md) | Functional | Should-have | Draft | Soulprint weights in provenance |
-| [REQ-F-remove-null-deltas](requirements/REQ-F-remove-null-deltas.md) | Functional | Must-have | Draft | Remove or implement transit delta fields |
+<!-- No requirements defined yet. Run /SDLC-elicit to create requirements. -->
 
 ---
 
@@ -126,8 +116,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Risk | Summary |
 |------|----------|--------|------|---------|
-| [ASM-redis-available-on-fly](assumptions/ASM-redis-available-on-fly.md) | Technology | Unverified | Medium | Redis can be provisioned on Fly.io ams region |
-| [ASM-soulprint-mapping-acceptable](assumptions/ASM-soulprint-mapping-acceptable.md) | Business | Unverified | High | Proprietary Wu-Xing→sector mapping is acceptable if documented |
+| [ASM-preliminary-pricing](assumptions/ASM-preliminary-pricing.md) | Business | Unverified | Medium | €4.99/month is placeholder — real pricing requires unit economics and investor input |
 
 ---
 
@@ -135,5 +124,4 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Summary |
 |------|----------|--------|---------|
-| [CON-redis-dependency](constraints/CON-redis-dependency.md) | Technical | Active | Redis required for persistent rate limiting |
-| [CON-no-breaking-changes](constraints/CON-no-breaking-changes.md) | Technical | Active | No breaking changes to existing API contracts |
+| [CON-subscription-not-onetime](constraints/CON-subscription-not-onetime.md) | Business | Active | Monetization is subscription (€4.99/month preliminary), NOT one-time payment — legacy translation error must be corrected everywhere |

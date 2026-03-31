@@ -46,12 +46,14 @@ Every number is deterministic, reproducible, and auditable. No black boxes. No g
 
 **Live URL**: [bazodiac.space](https://bazodiac.space)
 
-**Active phase**: Scaffold initialized → Specification phase ready to begin
+**Active phase**: Specification (in progress)
 
 - **Scaffold**: AI SDLC scaffold deployed and initialized
-- **Existing code**: Interactive investor pitch page (`index.html`, `engine.js`, `interactions.js`, `styles.css`) — live and functional
-- **1-spec/**: Contains example artifacts from scaffold template — **to be replaced** with insight.bazodiac-specific spec artifacts
-- **Next step**: Run `/SDLC-elicit` to define stakeholders, goals, user stories, and requirements for the insight.bazodiac platform
+- **Existing code**: Interactive investor pitch page (`index.html`, `engine.js`, `interactions.js`, `styles.css`) — live at bazodiac.space
+- **1-spec/**: Stakeholders defined (7 — founder, investor, 4 personas, advisor); 1 constraint (subscription model); 1 assumption (preliminary pricing). Old FuFirE example artifacts removed. Goals, user stories, and requirements pending.
+- **Monetization**: Subscription model at €4.99/month (preliminary). One-time payment references are a legacy translation error — see CON-subscription-not-onetime.
+- **Target segment**: Agnostic, semi-spiritual, framework-curious users (not entertainment-astrology users). Proven via 4 personas: Lena (System Thinker), Marc (Depth Seeker), Sophia (Intuitive Practitioner), Kai (Identity Explorer).
+- **Next step**: Continue `/SDLC-elicit` — define goals, then user stories and requirements
 
 ---
 
