@@ -92,7 +92,10 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Priority | Status | Summary |
 |------|----------|--------|---------|
-<!-- No goals defined yet. Run /SDLC-elicit to create goals. -->
+| [GOAL-investor-conviction](goals/GOAL-investor-conviction.md) | Must-have | Draft | Page must move investor from curiosity to conviction in a single scroll — answering market, team, and timing questions |
+| [GOAL-math-transparency](goals/GOAL-math-transparency.md) | Must-have | Draft | Every number, formula, and market claim must be realistic, plausible, and auditable with sources |
+| [GOAL-persona-market-proof](goals/GOAL-persona-market-proof.md) | Must-have | Draft | Prove the framework-curious premium segment is larger and more monetizable than entertainment astrology |
+| [GOAL-premium-brand-perception](goals/GOAL-premium-brand-perception.md) | Must-have | Draft | Visual/interaction design signals "deep tech meets luxury" — not "another astrology app" |
 
 ---
 
