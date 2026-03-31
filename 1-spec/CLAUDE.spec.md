@@ -96,6 +96,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | [GOAL-math-transparency](goals/GOAL-math-transparency.md) | Must-have | Draft | Every number, formula, and market claim must be realistic, plausible, and auditable with sources |
 | [GOAL-persona-market-proof](goals/GOAL-persona-market-proof.md) | Must-have | Draft | Prove the framework-curious premium segment is larger and more monetizable than entertainment astrology |
 | [GOAL-premium-brand-perception](goals/GOAL-premium-brand-perception.md) | Must-have | Draft | Visual/interaction design signals "deep tech meets luxury" — not "another astrology app" |
+| [GOAL-risk-transparency](goals/GOAL-risk-transparency.md) | Must-have | Draft | Show investors that risks are identified, quantified, and have kill criteria with 90-day validation cycle |
 
 ---
 
@@ -139,3 +140,4 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | [CON-static-frontend-only](constraints/CON-static-frontend-only.md) | Technical | Active | Insight page is pure client-side HTML/CSS/JS — no backend |
 | [CON-confidential-not-indexed](constraints/CON-confidential-not-indexed.md) | Operational | Active | Page must have noindex — "Confidential Preview" must be technically enforced |
 | [CON-no-unattributed-projections](constraints/CON-no-unattributed-projections.md) | Business | Active | All market claims require source attribution or explicit "estimate" labeling |
+| [CON-90-day-kill-discipline](constraints/CON-90-day-kill-discipline.md) | Business | Active | Non-negotiable 90-day validation cycle with pre-committed kill criteria for both HIGH-risk assumptions |
