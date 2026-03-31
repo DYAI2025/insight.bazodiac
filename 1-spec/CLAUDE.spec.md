@@ -126,7 +126,7 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Type | Priority | Status | Summary |
 |------|------|----------|--------|---------|
-<!-- No requirements defined yet. Run /SDLC-elicit to create requirements. -->
+| [REQ-F-noindex-enforcement](requirements/REQ-F-noindex-enforcement.md) | Functional | Must-have | Draft | Page must have `noindex, nofollow` meta tag (already implemented) |
 
 ---
 
