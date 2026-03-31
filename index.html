@@ -367,20 +367,23 @@
     <section id="market" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-6xl mx-auto">
             <span class="tech-label text-[#D4AF37]/60 block mb-4 text-center">INVESTOR SIGNAL</span>
-            <h2 class="text-center section-title gold-leaf-text mb-20 decode-title" data-text="THE $2.2B OPPORTUNITY">THE $2.2B OPPORTUNITY</h2>
+            <h2 class="text-center section-title gold-leaf-text mb-20 decode-title" data-text="THE $14.3B OPPORTUNITY">THE $14.3B OPPORTUNITY</h2>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="glass-card p-12 text-center reveal-up">
-                    <div class="data-number" data-target="2.2" data-prefix="$" data-suffix="B">$0.0B</div>
-                    <p class="tech-label text-white/30 mt-4">Astrology market (2025)</p>
+                    <div class="data-number" data-target="14.3" data-prefix="$" data-suffix="B">$0.0B</div>
+                    <p class="tech-label text-white/30 mt-4">Global Astrology Market (2024)</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">Source: Precedence Research, 2024</p>
                 </div>
                 <div class="glass-card p-12 text-center border-[#D4AF37]/40 shadow-[0_0_40px_rgba(212,175,55,0.05)] reveal-up">
-                    <div class="text-[#D4AF37] text-xl tracking-[0.3em] font-extralight mb-4 uppercase">BLUE OCEAN</div>
-                    <p class="tech-label text-white/30 text-xs">0% BaZi penetration in West.</p>
+                    <div class="data-number" data-target="4.73" data-prefix="$" data-suffix="B">$0.0B</div>
+                    <p class="tech-label text-white/30 mt-4">Apps Segment (2025) · 20.2% CAGR</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">→ $11.7B by 2030</p>
                 </div>
                 <div class="glass-card p-12 text-center reveal-up">
-                    <div class="data-number" data-target="73" data-suffix="%">0%</div>
-                    <p class="tech-label text-white/30 mt-4">Identity Frameworks</p>
+                    <div class="text-[#D4AF37] text-xl tracking-[0.3em] font-extralight mb-4 uppercase">BLUE OCEAN</div>
+                    <p class="tech-label text-white/30 text-xs">0% auditable BaZi fusion in West.</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">Incumbent: Cosmic Fusion (black-box engine)</p>
                 </div>
             </div>
         </div>
@@ -605,7 +608,8 @@
                     scrollTrigger: { trigger: num, start: "top 90%" },
                     val: target, duration: 2.5,
                     onUpdate: function() {
-                        num.innerText = `${num.dataset.prefix || ''}${this.targets()[0].val.toFixed(1)}${num.dataset.suffix || ''}`;
+                        const decimals = (num.dataset.target || '').includes('.') ? (num.dataset.target.split('.')[1] || '').length : 0;
+                        num.innerText = `${num.dataset.prefix || ''}${this.targets()[0].val.toFixed(Math.max(decimals, 1))}${num.dataset.suffix || ''}`;
                     }
                 });
             });
