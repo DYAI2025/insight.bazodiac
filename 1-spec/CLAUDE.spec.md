@@ -120,6 +120,11 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 | File | Category | Status | Risk | Summary |
 |------|----------|--------|------|---------|
 | [ASM-preliminary-pricing](assumptions/ASM-preliminary-pricing.md) | Business | Unverified | Medium | €4.99/month is placeholder — real pricing requires unit economics and investor input |
+| [ASM-fufire-substance-over-cosmic-ux](assumptions/ASM-fufire-substance-over-cosmic-ux.md) | Business | Unverified | High | BAZODIAC can beat Cosmic Fusion on substance if claims are demythologized and verified |
+| [ASM-framework-segment-higher-wtp](assumptions/ASM-framework-segment-higher-wtp.md) | Business | Unverified | High | Framework-curious segment pays more than entertainment-astrology users |
+| [ASM-market-size-defensible](assumptions/ASM-market-size-defensible.md) | Business | Unverified | Medium | Market figures ($14.3B total, $4.73B apps) are attributable to credible research |
+| [ASM-cac-under-three](assumptions/ASM-cac-under-three.md) | Business | Unverified | Medium | CAC <€3 achievable via viral mechanics (k=0.8, Signature-Morph sharing) |
+| [ASM-ltv-range-plausible](assumptions/ASM-ltv-range-plausible.md) | Business | Unverified | Medium | €35–50 LTV at 7–10 months retention is realistic for premium segment |
 
 ---
 
@@ -127,4 +132,10 @@ When an artifact (goal, user story, requirement) is no longer relevant:
 
 | File | Category | Status | Summary |
 |------|----------|--------|---------|
-| [CON-subscription-not-onetime](constraints/CON-subscription-not-onetime.md) | Business | Active | Monetization is subscription (€4.99/month preliminary), NOT one-time payment — legacy translation error must be corrected everywhere |
+| [CON-subscription-not-onetime](constraints/CON-subscription-not-onetime.md) | Business | Active | Monetization is subscription (€4.99/month preliminary), NOT one-time payment — legacy translation error |
+| [CON-cosmic-fusion-incumbent](constraints/CON-cosmic-fusion-incumbent.md) | Business | Active | Cosmic Fusion is the direct competitor — insight page must acknowledge, position against, and present attack strategy |
+| [CON-no-overclaiming](constraints/CON-no-overclaiming.md) | Business | Active | No unverified superlatives or mythopoetic language in investor materials — FuFirE has Overconfidence + Complexity Bias |
+| [CON-single-source-market-data](constraints/CON-single-source-market-data.md) | Business | Active | Market figures must be reconciled: $14.3B total, $4.73B apps, CAGR 6%/20.2% — no conflicting numbers |
+| [CON-static-frontend-only](constraints/CON-static-frontend-only.md) | Technical | Active | Insight page is pure client-side HTML/CSS/JS — no backend |
+| [CON-confidential-not-indexed](constraints/CON-confidential-not-indexed.md) | Operational | Active | Page must have noindex — "Confidential Preview" must be technically enforced |
+| [CON-no-unattributed-projections](constraints/CON-no-unattributed-projections.md) | Business | Active | All market claims require source attribution or explicit "estimate" labeling |

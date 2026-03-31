@@ -50,9 +50,13 @@ Every number is deterministic, reproducible, and auditable. No black boxes. No g
 
 - **Scaffold**: AI SDLC scaffold deployed and initialized
 - **Existing code**: Interactive investor pitch page (`index.html`, `engine.js`, `interactions.js`, `styles.css`) — live at bazodiac.space
-- **1-spec/**: Stakeholders defined (7); 4 goals drafted (investor-conviction, math-transparency, persona-market-proof, premium-brand-perception); 1 constraint (subscription model); 1 assumption (preliminary pricing). User stories and requirements pending.
-- **Monetization**: Subscription model at €4.99/month (preliminary). One-time payment references are a legacy translation error — see CON-subscription-not-onetime.
-- **Target segment**: Agnostic, semi-spiritual, framework-curious users (not entertainment-astrology users). Proven via 4 personas: Lena (System Thinker), Marc (Depth Seeker), Sophia (Intuitive Practitioner), Kai (Identity Explorer).
+- **1-spec/**: Stakeholders (7), Goals (4 Draft), Constraints (7 Active), Assumptions (6 Unverified). User stories and requirements pending.
+- **Key constraint**: Cosmic Fusion is the direct competitor (Platzhirsch) — page must position against them with honest competitive analysis (CON-cosmic-fusion-incumbent)
+- **Key constraint**: No overclaiming — FuFirE has Overconfidence + Complexity Bias; mythopoetic language prohibited in investor materials (CON-no-overclaiming)
+- **Market data reconciled**: $14.3B global total (2024), $4.73B apps (2025), CAGR 6%/20.2% — per CON-single-source-market-data
+- **Monetization**: Subscription €4.99/month (preliminary). One-time payment is legacy translation error.
+- **Target segment**: Agnostic, semi-spiritual, framework-curious users. 4 personas: Lena, Marc, Sophia, Kai.
+- **Critical assumptions**: Framework segment higher WTP (High risk), FuFirE substance over Cosmic Fusion UX (High risk)
 - **Next step**: Continue `/SDLC-elicit` — define user stories and requirements for each goal
 
 ---
