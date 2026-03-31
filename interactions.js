@@ -68,7 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             onUpdate: function() {
                 const prefix = num.dataset.prefix || '';
                 const suffix = num.dataset.suffix || '';
-                num.innerText = `${prefix}${this.targets()[0].val.toFixed(1)}${suffix}`;
+                const decimals = (num.dataset.target || '').includes('.') ? (num.dataset.target.split('.')[1] || '').length : 0;
+                num.innerText = `${prefix}${this.targets()[0].val.toFixed(Math.max(decimals, 1))}${suffix}`;
             }
         });
     });

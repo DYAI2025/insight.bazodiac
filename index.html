@@ -3,20 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BAZODIAC — The world's first mathematical fusion of Western Astrology, Chinese BaZi, and Wu-Xing into a single auditable signal.">
     <meta name="robots" content="noindex, nofollow">
-    
     <title>BAZODIAC — Your Signal. Decoded.</title>
-    
-    <!-- External Assets -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Visual Engine & Logic -->
     <script type="module" src="interactions.js"></script>
 </head>
 <body class="selection:bg-indigo-500/30">
@@ -25,38 +17,42 @@
     <div id="nebula-lens" class="nebula-lens"></div>
     <div id="custom-cursor" class="custom-cursor"></div>
     <div id="cursor-ring" class="cursor-ring"></div>
-    
-    <!-- Neo Indicator -->
-    <div id="coherence-indicator" class="mono">H: 0.9421</div>
 
-    <!-- Mobile Navigation -->
+    <!-- Coherence Indicator -->
+    <div id="coherence-indicator" class="mono" title="Coherence Index (H): measures agreement between the three systems. H=1 = perfect alignment. Simulated display.">H: 0.9421</div>
+
+    <!-- Mobile Navigation — all 7 sections -->
     <nav class="mobile-nav md:hidden">
-        <a href="#" class="nav-dot active" aria-label="Hero Section"></a>
-        <a href="#fufire" class="nav-dot" aria-label="FuFirE Engine"></a>
-        <a href="#market" class="nav-dot" aria-label="Market Opportunity"></a>
+        <a href="#hero" class="nav-dot active" aria-label="Hero"></a>
+        <a href="#problem" class="nav-dot" aria-label="Problem"></a>
+        <a href="#product" class="nav-dot" aria-label="Product"></a>
+        <a href="#proof" class="nav-dot" aria-label="Proof"></a>
+        <a href="#opportunity" class="nav-dot" aria-label="Opportunity"></a>
+        <a href="#risk" class="nav-dot" aria-label="Risk"></a>
+        <a href="#ask" class="nav-dot" aria-label="Contact"></a>
     </nav>
 
-    <!-- SECTION 1: HERO -->
-    <section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden border-b border-white/[0.04]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 1: HERO — Hook + Tagline + Investor CTA
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="hero" class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden border-b border-white/[0.04]">
         <canvas id="hero-vortex" class="absolute inset-0 z-0"></canvas>
-        
+
         <div class="relative z-10 flex flex-col items-center max-w-5xl">
             <span class="tech-label mb-12 opacity-0 translate-y-4 hero-kicker">Confidential Preview · March 2026</span>
-            
+
             <div class="relative mb-8 flex items-center justify-center h-[300px] w-full">
                 <canvas id="zodiac-ring" width="600" height="600" class="absolute pointer-events-none"></canvas>
-                <a href="#investor-dossier" class="interactive group block">
-                    <h1 class="hero-title gold-leaf-text text-4xl md:text-7xl lg:text-8xl font-extralight tracking-[0.5em] opacity-0 translate-y-8 transition-transform group-hover:scale-105">
-                        BAZODIAC
-                    </h1>
-                </a>
+                <h1 class="hero-title gold-leaf-text text-4xl md:text-7xl lg:text-8xl font-extralight tracking-[0.5em] opacity-0 translate-y-8">
+                    BAZODIAC
+                </h1>
             </div>
 
             <div class="w-[120px] h-[1px] bg-[#D4AF37]/50 my-8 opacity-0 hero-rule"></div>
 
             <p class="hero-sub text-lg md:text-xl font-light tracking-[0.15em] text-white/60 max-w-2xl opacity-0 translate-y-4">
-                The world's first mathematical fusion of<br>
-                Western Astrology and Chinese BaZi.
+                A mathematical fusion of Western Astrology,<br>
+                Chinese BaZi, and Wu-Xing — auditable and deterministic.
             </p>
 
             <p class="mt-4 tech-label text-[#D4AF37]/60 opacity-0 translate-y-4">
@@ -64,19 +60,21 @@
             </p>
 
             <div class="mt-12 flex flex-col items-center gap-6 opacity-0 translate-y-4 hero-cta">
-                <button class="btn-primary interactive">Discover Your Signal</button>
-                <a href="#investor-dossier" class="tech-label text-white/30 hover:underline hover:text-[#D4AF37] transition-all interactive">
+                <a href="#ask" class="btn-primary interactive">Request Investor Access</a>
+                <a href="#opportunity" class="tech-label text-white/30 hover:underline hover:text-[#D4AF37] transition-all interactive">
                     For Investors →
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: THE PROBLEM -->
-    <section class="py-32 px-6 border-b border-white/[0.04]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 2: PROBLEM — The Illusion of Depth
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="problem" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-5xl mx-auto">
             <h2 class="section-title gold-leaf-text mb-20 decode-title" data-text="THE ILLUSION OF DEPTH">THE ILLUSION OF DEPTH</h2>
-            
+
             <div class="grid md:grid-cols-2 gap-20 mobile-reverse">
                 <div class="reveal-up">
                     <span class="tech-label text-red-900/40 block mb-4">STATUS QUO</span>
@@ -103,194 +101,385 @@
             </div>
 
             <p class="mt-20 text-center italic text-[#D4AF37]/70 max-w-[700px] mx-auto reveal-up">
-                "Bazodiac does not filter by 'believers' vs. 'skeptics'. We deliver transparency, stance, and efficacy across the full spectrum."
+                "The mathematics creates trust. The openness to spirituality creates willingness to engage. BAZODIAC is a thinking model, not a belief system."
             </p>
         </div>
     </section>
 
-    <!-- SECTION 3: THE THREE SYSTEMS -->
-    <section class="py-32 px-6 border-b border-white/[0.04]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 3: PRODUCT — Three Systems + FuFirE Engine
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="product" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="section-title gold-leaf-text mb-2 decode-title" data-text="ONE SIGNAL. THREE SOURCES.">ONE SIGNAL. THREE SOURCES.</h2>
             <p class="tech-label text-white/30 mb-20">Why no single system is complete.</p>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-32">
                 <div class="glass-card p-10 reveal-up flex flex-col items-center">
                     <svg class="w-16 h-16 mb-8 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9L12 2Z"/></svg>
                     <h3 class="text-[#D4AF37] text-sm tracking-widest mb-6">WESTERN ASTROLOGY</h3>
-                    <p class="text-xs text-white/40 mb-2">Focus: Geometry & planetary cycles.</p>
-                    <p class="text-xs text-white/40 mb-6">Contribution: Fundamental being.</p>
-                    <span class="mono text-[#D4AF37]/60 text-[10px]">Frequency: 1.0</span>
+                    <p class="text-xs text-white/50 mb-2">W(s) — Planetary geometry and natal aspects.</p>
+                    <p class="text-xs text-white/40 mb-6">Your fundamental being. Weight: 0.375</p>
                 </div>
                 <div class="glass-card p-10 reveal-up flex flex-col items-center shadow-[0_0_60px_rgba(212,175,55,0.08)]">
                     <svg class="w-16 h-16 mb-8 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 4h4v16H4zm6 0h4v16h-4zm6 0h4v16h-4z"/></svg>
                     <h3 class="text-[#D4AF37] text-sm tracking-widest mb-6">CHINESE BAZI</h3>
-                    <p class="text-xs text-white/40 mb-2">Focus: Rhythmic time pillars.</p>
-                    <p class="text-xs text-white/40 mb-6">Contribution: Temporal engine.</p>
-                    <span class="mono text-[#D4AF37]/60 text-[10px]">Frequency: 0.618</span>
+                    <p class="text-xs text-white/50 mb-2">B(s) — Four Pillars: Heavenly Stems & Earthly Branches.</p>
+                    <p class="text-xs text-white/40 mb-6">Your temporal rhythm. Weight: 0.375</p>
                 </div>
                 <div class="glass-card p-10 reveal-up flex flex-col items-center">
                     <svg class="w-16 h-16 mb-8 text-[#D4AF37]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2l4 7h7l-6 5 2 8-7-5-7 5 2-8-6-5h7z"/></svg>
                     <h3 class="text-[#D4AF37] text-sm tracking-widest mb-6">WU-XING</h3>
-                    <p class="text-xs text-white/40 mb-2">Focus: Elemental feedback.</p>
-                    <p class="text-xs text-white/40 mb-6">Contribution: Physical expression.</p>
-                    <span class="mono text-[#D4AF37]/60 text-[10px]">Frequency: 1.414</span>
+                    <p class="text-xs text-white/50 mb-2">X(s) — Five Element cycles (generative & controlling).</p>
+                    <p class="text-xs text-white/40 mb-6">Your physical expression. Weight: 0.250</p>
+                </div>
+            </div>
+
+            <!-- FuFirE Engine -->
+            <div class="max-w-6xl mx-auto text-left">
+                <span class="tech-label text-[#D4AF37]/60 block mb-4">DEEP-TECH CORE</span>
+                <h2 class="section-title gold-leaf-text mb-20 decode-title" data-text="FUFIRE ENGINE">FUFIRE ENGINE</h2>
+
+                <div class="grid md:grid-cols-2 gap-20 items-center">
+                    <div class="flex flex-col items-center">
+                        <canvas id="fufire-radar" width="340" height="340" class="interactive"></canvas>
+                    </div>
+                    <div class="space-y-10">
+                        <div class="mono p-6 glass-card border-[#D4AF37]/40 text-[#D4AF37] text-xs">
+                            Signal(s) = 0.375·W(s) + 0.375·B(s) + 0.25·X(s)
+                        </div>
+                        <div class="space-y-4 text-sm text-white/50">
+                            <p><span class="text-[#D4AF37]">W</span> = Western Astrology — planetary geometry, natal aspects, transits</p>
+                            <p><span class="text-[#D4AF37]">B</span> = Chinese BaZi — Heavenly Stems, Earthly Branches, Four Pillars</p>
+                            <p><span class="text-[#D4AF37]">X</span> = Wu-Xing — Five Element generative and controlling cycles</p>
+                        </div>
+                        <div class="text-xs text-white/35 space-y-2">
+                            <p>Each sub-signal is a vector in <span class="text-[#D4AF37] mono">R⁵</span> (one axis per element: Wood, Fire, Earth, Metal, Water).</p>
+                            <p>Combined signal is <span class="text-[#D4AF37] mono">L2-normalized</span> onto the <span class="text-[#D4AF37] mono">S⁴</span> unit sphere — all signals comparable regardless of input magnitude.</p>
+                            <p><span class="text-[#D4AF37] mono">Coherence Index H ∈ [0, 1]</span> — measures how well the three systems agree. High H = reinforcement. Low H = tension worth exploring.</p>
+                        </div>
+                        <p class="text-xs text-white/25 italic">Weights sum to 1.0 (convex combination). Equal weight for Western + BaZi as primary systems; lower weight for Wu-Xing as elemental bridge layer.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: FUFIRE ENGINE -->
-    <section id="fufire" class="py-32 px-6 border-t border-[#D4AF37]/30 border-b border-white/[0.04]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 4: PROOF — Personas + Segment Contrast + Competitive
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="proof" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-6xl mx-auto">
-            <span class="tech-label text-[#D4AF37]/60 block mb-4">DEEP-TECH CORE</span>
-            <h2 class="section-title gold-leaf-text mb-20 decode-title" data-text="FUFIRE ENGINE">FUFIRE ENGINE</h2>
-            
-            <div class="grid md:grid-cols-2 gap-20 items-center">
-                <div class="flex flex-col items-center">
-                    <canvas id="fufire-radar" width="340" height="340" class="interactive"></canvas>
+            <span class="tech-label text-[#D4AF37]/60 block mb-4 text-center">TARGET MARKET PROOF</span>
+            <h2 class="text-center section-title gold-leaf-text mb-6 decode-title" data-text="WHO PAYS FOR DEPTH">WHO PAYS FOR DEPTH</h2>
+            <p class="text-center text-sm text-white/40 max-w-3xl mx-auto mb-20">Not the average Co-Star user. We target the agnostic, semi-spiritual, framework-curious segment — higher income, higher education, higher willingness to pay. They use identity systems as <span class="text-[#D4AF37]">thinking tools for reflection</span>, not as belief systems.</p>
+
+            <!-- Segment Contrast -->
+            <div class="grid md:grid-cols-2 gap-8 mb-20">
+                <div class="glass-card p-8 border-l-2 border-white/10 reveal-up">
+                    <span class="tech-label text-white/25 block mb-4">ENTERTAINMENT ASTROLOGY</span>
+                    <ul class="space-y-3 text-sm text-white/35">
+                        <li>Motivation: Fun, social sharing, daily content</li>
+                        <li>ARPU: ~$0 (free, ad-supported)</li>
+                        <li>Retention driver: Content novelty</li>
+                        <li>Reference: Co-Star — 20M downloads, $0 ARPU</li>
+                    </ul>
                 </div>
-                <div class="space-y-12">
-                    <div class="mono p-6 glass-card border-[#D4AF37]/40 text-[#D4AF37] text-xs">
-                        Signal(s) = 0.375·W(s) + 0.375·B(s) + 0.25·X(s)
-                    </div>
-                    <ul class="space-y-6 text-sm text-white/50">
-                        <li><span class="text-[#D4AF37] mr-3">*</span> Mathematical fusion in R⁵ space.</li>
-                        <li><span class="text-[#D4AF37] mr-3">*</span> L2-normalization on S⁴ sphere.</li>
-                        <li><span class="text-[#D4AF37] mr-3">*</span> Calibrated Coherence Index (H).</li>
+                <div class="glass-card p-8 border-l-2 border-[#D4AF37] reveal-up">
+                    <span class="tech-label text-[#D4AF37] block mb-4">FRAMEWORK-CURIOUS IDENTITY TOOLS</span>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li>Motivation: Self-insight, decisions, relationships</li>
+                        <li>ARPU: €4.99–9.99/month (subscription)</li>
+                        <li>Retention driver: Mathematical trust + daily resonance</li>
+                        <li>Benchmarks: MBTI $49.95 · Enneagram $100–200/session · Headspace €69.99/yr</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- 4 Persona Cards -->
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-20">
+                <div class="glass-card p-8 reveal-up">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-2">SYSTEM THINKER</span>
+                    <h3 class="text-[#D4AF37] text-lg tracking-widest mb-4">LENA</h3>
+                    <p class="text-xs text-white/40 mb-4">28 · UX Designer · Berlin · €55k</p>
+                    <p class="text-xs text-white/50 mb-6">Uses frameworks (MBTI, Human Design) as thinking tools, not beliefs. Demands aesthetic + technical precision. Brand ambassador in design circles.</p>
+                    <span class="tech-label text-white/20">Role: Brand Standard-Setter</span>
+                </div>
+                <div class="glass-card p-8 reveal-up border-[#D4AF37]/30 shadow-[0_0_30px_rgba(212,175,55,0.05)]">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-2">DEPTH SEEKER</span>
+                    <h3 class="text-[#D4AF37] text-lg tracking-widest mb-4">MARC</h3>
+                    <p class="text-xs text-white/40 mb-4">34 · Strategy Consultant · Munich · €85k</p>
+                    <p class="text-xs text-white/50 mb-6">Demands full FuFirE transparency. Fascinated by L2-normalization in R⁵. B2B pipeline indicator for FuFirE-as-a-Service. Highest LTV segment.</p>
+                    <span class="tech-label text-white/20">Role: Revenue Anchor</span>
+                </div>
+                <div class="glass-card p-8 reveal-up">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-2">INTUITIVE PRACTITIONER</span>
+                    <h3 class="text-[#D4AF37] text-lg tracking-widest mb-4">SOPHIA</h3>
+                    <p class="text-xs text-white/40 mb-4">26 · Psychology Student · Vienna</p>
+                    <p class="text-xs text-white/50 mb-6">Validates BaZi extension as vertical differentiation vs. US apps. Retention anchor via Morning Mail transits and Daily Signature Resonance.</p>
+                    <span class="tech-label text-white/20">Role: Retention Engine</span>
+                </div>
+                <div class="glass-card p-8 reveal-up">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-2">IDENTITY EXPLORER</span>
+                    <h3 class="text-[#D4AF37] text-lg tracking-widest mb-4">KAI</h3>
+                    <p class="text-xs text-white/40 mb-4">22 · Digital Native · Zurich</p>
+                    <p class="text-xs text-white/50 mb-6">Primary acquisition channel. Signature-Morph animations as social status markers. Viral coefficient target k=0.8. Shares identity artifacts in feeds.</p>
+                    <span class="tech-label text-white/20">Role: Acquisition Funnel</span>
+                </div>
+            </div>
+
+            <!-- Competitive Positioning -->
+            <div class="reveal-up">
+                <span class="tech-label text-[#D4AF37]/60 block mb-4">COMPETITIVE LANDSCAPE</span>
+                <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-8">BAZODIAC VS. COSMIC FUSION</h3>
+                <p class="text-xs text-white/40 mb-8">Cosmic Fusion is the market incumbent with 150k+ users and a hybrid astrology product. Their strength: simpler UX, lower cognitive entry barrier. Our advantage: auditable mathematical depth they cannot replicate.</p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left">
+                        <thead>
+                            <tr class="text-[#D4AF37]/60 tech-label border-b border-white/10">
+                                <th class="py-3 pr-4">Criterion</th>
+                                <th class="py-3 px-4">Cosmic Fusion</th>
+                                <th class="py-3 px-4 text-[#D4AF37]">BAZODIAC</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-white/40">
+                            <tr class="border-b border-white/5"><td class="py-3 pr-4">BaZi Depth</td><td class="py-3 px-4">Year animal only</td><td class="py-3 px-4 text-white/70">Full 4-Pillar calculation</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3 pr-4">Engine Auditability</td><td class="py-3 px-4">Black box</td><td class="py-3 px-4 text-white/70">Open formula + Contribution Ledger</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3 pr-4">Cross-System Metric</td><td class="py-3 px-4">None</td><td class="py-3 px-4 text-white/70">Coherence Index H ∈ [0,1]</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3 pr-4">AI Companion</td><td class="py-3 px-4">Generic chat</td><td class="py-3 px-4 text-white/70">Dual: Victoria (intuitive) + Levi (analytical)</td></tr>
+                            <tr class="border-b border-white/5"><td class="py-3 pr-4">DACH Market Focus</td><td class="py-3 px-4">No</td><td class="py-3 px-4 text-white/70">Yes — bilingual, DACH-first launch</td></tr>
+                            <tr><td class="py-3 pr-4">Dynamic Visualization</td><td class="py-3 px-4">Static charts</td><td class="py-3 px-4 text-white/70">29k-particle Fusion Ring + NASA modulation</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-12 grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 reveal-up">
+                        <span class="mono text-[#D4AF37]/60 text-[10px] block mb-2">MILESTONE 1 · Q2 2026</span>
+                        <p class="text-xs text-white/50">DACH launch with 3-tier model. 2,000 organic installs. 90-day validation cycle begins.</p>
+                    </div>
+                    <div class="glass-card p-6 reveal-up">
+                        <span class="mono text-[#D4AF37]/60 text-[10px] block mb-2">MILESTONE 2 · Q4 2026</span>
+                        <p class="text-xs text-white/50">Levi Voice Coaching live. B2B API beta for corporate coaching partners. 10k MAU target.</p>
+                    </div>
+                    <div class="glass-card p-6 reveal-up">
+                        <span class="mono text-[#D4AF37]/60 text-[10px] block mb-2">MILESTONE 3 · Q2 2027</span>
+                        <p class="text-xs text-white/50">EU expansion. FuFirE-as-a-Service for third-party apps. Synastrie-Engine for dating platforms.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SECTION 7: MARKET -->
-    <section id="market" class="py-32 px-6 border-b border-white/[0.04]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 5: OPPORTUNITY — Market + Unit Economics + Pricing
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="opportunity" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-6xl mx-auto">
             <span class="tech-label text-[#D4AF37]/60 block mb-4 text-center">INVESTOR SIGNAL</span>
-            <h2 class="text-center section-title gold-leaf-text mb-20 decode-title" data-text="THE $2.2B OPPORTUNITY">THE $2.2B OPPORTUNITY</h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
+            <h2 class="text-center section-title gold-leaf-text mb-20 decode-title" data-text="THE $14.3B OPPORTUNITY">THE $14.3B OPPORTUNITY</h2>
+
+            <!-- Market Figures -->
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
                 <div class="glass-card p-12 text-center reveal-up">
-                    <div class="data-number" data-target="2.2" data-prefix="$" data-suffix="B">$0.0B</div>
-                    <p class="tech-label text-white/30 mt-4">Astrology market (2025)</p>
+                    <div class="data-number" data-target="14.3" data-prefix="$" data-suffix="B">$0.0B</div>
+                    <p class="tech-label text-white/30 mt-4">Global Astrology Market (2024)</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">Source: Precedence Research, 2024</p>
                 </div>
                 <div class="glass-card p-12 text-center border-[#D4AF37]/40 shadow-[0_0_40px_rgba(212,175,55,0.05)] reveal-up">
-                    <div class="text-[#D4AF37] text-xl tracking-[0.3em] font-extralight mb-4 uppercase">BLUE OCEAN</div>
-                    <p class="tech-label text-white/30 text-xs">0% BaZi penetration in West.</p>
+                    <div class="data-number" data-target="4.73" data-prefix="$" data-suffix="B">$0.0B</div>
+                    <p class="tech-label text-white/30 mt-4">Apps Segment (2025) · 20.2% CAGR</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">→ $11.7B by 2030</p>
                 </div>
                 <div class="glass-card p-12 text-center reveal-up">
-                    <div class="data-number" data-target="73" data-suffix="%">0%</div>
-                    <p class="tech-label text-white/30 mt-4">Identity Frameworks</p>
+                    <div class="text-[#D4AF37] text-xl tracking-[0.3em] font-extralight mb-4 uppercase">BLUE OCEAN</div>
+                    <p class="tech-label text-white/30 text-xs">0% auditable BaZi fusion in West.</p>
+                    <p class="text-[10px] text-white/20 mt-2 mono">Incumbent: Cosmic Fusion (black-box engine)</p>
+                </div>
+            </div>
+
+            <!-- 3-Tier Pricing -->
+            <div class="mb-20">
+                <h3 class="text-center text-[#D4AF37] text-sm tracking-[0.25em] mb-2">SUBSCRIPTION MODEL</h3>
+                <p class="text-center text-[10px] text-white/25 mb-10 mono">Preliminary benchmarks — to be validated with investor input</p>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass-card p-8 text-center reveal-up">
+                        <span class="tech-label text-white/30 block mb-3">FREE</span>
+                        <div class="text-2xl font-extralight text-white/60 mb-4">€0</div>
+                        <ul class="text-xs text-white/40 space-y-2 text-left">
+                            <li>· 144 Western×BaZi combinations</li>
+                            <li>· Basic natal chart</li>
+                            <li>· 1× Victoria daily resonance</li>
+                        </ul>
+                        <p class="mt-6 text-[10px] text-white/20 mono">Validates: acquisition funnel (Kai)</p>
+                    </div>
+                    <div class="glass-card p-8 text-center border-[#D4AF37]/30 shadow-[0_0_40px_rgba(212,175,55,0.05)] reveal-up">
+                        <span class="tech-label text-[#D4AF37] block mb-3">ESSENTIALS</span>
+                        <div class="text-2xl font-extralight text-[#D4AF37] mb-1">€4.99<span class="text-sm text-white/30">/mo</span></div>
+                        <p class="text-[10px] text-white/25 mb-4 mono">€49.99/year · cf. Cosmic Fusion $39.99/yr</p>
+                        <ul class="text-xs text-white/50 space-y-2 text-left">
+                            <li>· Full 4-Pillar BaZi analysis</li>
+                            <li>· Wu-Xing element distribution</li>
+                            <li>· Victoria unlimited + Synastry</li>
+                        </ul>
+                        <p class="mt-6 text-[10px] text-white/20 mono">Validates: BaZi depth WTP (Sophia, Lena)</p>
+                    </div>
+                    <div class="glass-card p-8 text-center reveal-up">
+                        <span class="tech-label text-white/30 block mb-3">PREMIUM</span>
+                        <div class="text-2xl font-extralight text-white/60 mb-1">€9.99<span class="text-sm text-white/30">/mo</span></div>
+                        <p class="text-[10px] text-white/25 mb-4 mono">€89.99/year · cf. Headspace €69.99/yr</p>
+                        <ul class="text-xs text-white/40 space-y-2 text-left">
+                            <li>· Levi Voice Coaching</li>
+                            <li>· Fusion Ring real-time visualization</li>
+                            <li>· Real-time transits + priority support</li>
+                        </ul>
+                        <p class="mt-6 text-[10px] text-white/20 mono">Validates: premium WTP exists (Marc)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit Economics -->
+            <div class="reveal-up">
+                <h3 class="text-center text-[#D4AF37] text-sm tracking-[0.25em] mb-2">UNIT ECONOMICS</h3>
+                <p class="text-center text-[10px] text-white/25 mb-8 mono">Preliminary projections — to be validated in 90-day cycle</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="glass-card p-6 text-center">
+                        <div class="text-xl font-light text-[#D4AF37]">&lt;€3</div>
+                        <p class="tech-label text-white/30 mt-2">Target CAC</p>
+                        <p class="text-[10px] text-white/15 mt-1 mono">Via viral k=0.8</p>
+                    </div>
+                    <div class="glass-card p-6 text-center">
+                        <div class="text-xl font-light text-[#D4AF37]">€35–50</div>
+                        <p class="tech-label text-white/30 mt-2">Target LTV</p>
+                        <p class="text-[10px] text-white/15 mt-1 mono">7–10 months retention</p>
+                    </div>
+                    <div class="glass-card p-6 text-center">
+                        <div class="text-xl font-light text-[#D4AF37]">≥5%</div>
+                        <p class="tech-label text-white/30 mt-2">Free → Essentials</p>
+                        <p class="text-[10px] text-white/15 mt-1 mono">Conversion target</p>
+                    </div>
+                    <div class="glass-card p-6 text-center">
+                        <div class="text-xl font-light text-[#D4AF37]">≥2%</div>
+                        <p class="tech-label text-white/30 mt-2">Free → Premium</p>
+                        <p class="text-[10px] text-white/15 mt-1 mono">Conversion target</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    
-    <!-- SECTION 8: INVESTOR DOSSIER -->
-    <section id="investor-dossier" class="py-32 px-6 border-b border-white/[0.04] bg-gradient-to-b from-transparent to-white/[0.01]">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 6: RISK — Kill Criteria + Defense Lines + Pivot Plans
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="risk" class="py-32 px-6 border-b border-white/[0.04]">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="tech-label text-[#D4AF37]/60 block mb-4">INVESTOR DOSSIER</span>
-                <h2 class="section-title gold-leaf-text mb-5 decode-title" data-text="CLICK INTO THE BUSINESS">CLICK INTO THE BUSINESS</h2>
-                <p class="text-sm text-white/45 max-w-2xl mx-auto">Six short deep dives. Same signal, different lens: architecture, engine logic, formulas, audience, trust, and competitive edge.</p>
+            <span class="tech-label text-[#D4AF37]/60 block mb-4 text-center">RISK AWARENESS</span>
+            <h2 class="text-center section-title gold-leaf-text mb-6 decode-title" data-text="WE KNOW WHAT COULD FAIL">WE KNOW WHAT COULD FAIL</h2>
+            <p class="text-center text-sm text-white/40 max-w-3xl mx-auto mb-20">Two critical assumptions. Diagnosed honestly. Defended strategically. Kill criteria committed before launch — cannot be changed during the cycle.</p>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Risk 1 -->
+                <div class="glass-card p-8 border-l-2 border-yellow-500/40 reveal-up">
+                    <span class="tech-label text-yellow-500/80 block mb-3">⚠️ HIGH RISK</span>
+                    <h3 class="text-[#D4AF37] text-sm tracking-widest mb-4">SUBSTANCE VS. UX</h3>
+                    <p class="text-xs text-white/50 mb-6">Mathematical depth may not translate to perceived user value. The market proves users choose emotion over precision (Co-Star: 20M downloads with questionable quality).</p>
+
+                    <span class="tech-label text-white/25 block mb-3">DEFENSE LINES</span>
+                    <ul class="text-xs text-white/40 space-y-2 mb-6">
+                        <li><span class="text-[#D4AF37]">1.</span> "Proof of Precision" moment — user feels accuracy without understanding the math</li>
+                        <li><span class="text-[#D4AF37]">2.</span> Companion-First — Victoria delivers the relationship, FuFirE delivers the data</li>
+                        <li><span class="text-[#D4AF37]">3.</span> Fallback: FuFirE as B2B API infrastructure for other apps</li>
+                    </ul>
+
+                    <span class="tech-label text-white/25 block mb-3">KILL CRITERIA (90d)</span>
+                    <div class="mono text-[10px] text-white/30 space-y-1">
+                        <p>D30 Retention: target ≥18% · warn &lt;12% · <span class="text-red-400/60">kill &lt;7%</span></p>
+                        <p>NPS "More accurate": target ≥40% · warn &lt;25% · <span class="text-red-400/60">kill &lt;15%</span></p>
+                        <p>Victoria Daily Open: target ≥35% · warn &lt;22% · <span class="text-red-400/60">kill &lt;12%</span></p>
+                    </div>
+                </div>
+
+                <!-- Risk 2 -->
+                <div class="glass-card p-8 border-l-2 border-yellow-500/40 reveal-up">
+                    <span class="tech-label text-yellow-500/80 block mb-3">⚠️ HIGH RISK</span>
+                    <h3 class="text-[#D4AF37] text-sm tracking-widest mb-4">PREMIUM WILLINGNESS TO PAY</h3>
+                    <p class="text-xs text-white/50 mb-6">The framework-curious segment may not pay more than entertainment users. No reliable market data proves this segment exists in astrology specifically.</p>
+
+                    <span class="tech-label text-white/25 block mb-3">DEFENSE LINES</span>
+                    <ul class="text-xs text-white/40 space-y-2 mb-6">
+                        <li><span class="text-[#D4AF37]">1.</span> Three-tier pricing validates WTP granularly (Free / €4.99 / €9.99)</li>
+                        <li><span class="text-[#D4AF37]">2.</span> DACH-specific: higher wellness WTP, bilingual A/B testing</li>
+                        <li><span class="text-[#D4AF37]">3.</span> Fallback: Volume pivot to Cosmic Fusion price level (€39.99/yr)</li>
+                    </ul>
+
+                    <span class="tech-label text-white/25 block mb-3">KILL CRITERIA (90d)</span>
+                    <div class="mono text-[10px] text-white/30 space-y-1">
+                        <p>Free→Essentials: target ≥5% · warn &lt;3% · <span class="text-red-400/60">kill &lt;1.5%</span></p>
+                        <p>ARPU (all): target ≥€0.80 · warn &lt;€0.50 · <span class="text-red-400/60">kill &lt;€0.25</span></p>
+                        <p>Essentials M1 Churn: target &lt;25% · warn &gt;35% · <span class="text-red-400/60">kill &gt;50%</span></p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                <a href="architecture.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">01 · ARCHITECTURE</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">SYSTEM STACK</h3>
-                    <p class="text-sm text-white/55 mb-6">How Bazodiac turns birth data into a deterministic fusion output, from astronomy to product layer.</p>
-                    <div class="grid grid-cols-4 gap-2">
-                        <div class="h-14 rounded border border-[#D4AF37]/20 bg-white/[0.02]"></div>
-                        <div class="h-14 rounded border border-[#D4AF37]/20 bg-white/[0.03]"></div>
-                        <div class="h-14 rounded border border-[#D4AF37]/20 bg-white/[0.04]"></div>
-                        <div class="h-14 rounded border border-[#D4AF37]/20 bg-white/[0.05]"></div>
-                    </div>
-                </a>
-
-                <a href="engine.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">02 · FUFIRE ENGINE</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">DEEP-TECH CORE</h3>
-                    <p class="text-sm text-white/55 mb-6">What the engine actually computes, what stays deterministic, and where the product becomes experiential.</p>
-                    <div class="flex items-end gap-3 h-14">
-                        <div class="w-1/4 h-6 rounded-t bg-[#3b82f6]/40"></div>
-                        <div class="w-1/4 h-10 rounded-t bg-[#D4AF37]/45"></div>
-                        <div class="w-1/4 h-8 rounded-t bg-[#3b82f6]/35"></div>
-                        <div class="w-1/4 h-12 rounded-t bg-[#D4AF37]/55"></div>
-                    </div>
-                </a>
-
-                <a href="formula.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">03 · FORMULA</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">MATH YOU CAN READ</h3>
-                    <p class="text-sm text-white/55 mb-6">The few formulas that matter: time correction, vector fusion, normalization, and calibrated coherence.</p>
-                    <div class="mono text-[11px] text-[#D4AF37]/80 leading-relaxed">S = 0.375W + 0.375B + 0.25X<br>H = cos(v<sub>W</sub>, v<sub>B</sub>)</div>
-                </a>
-
-                <a href="audience.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">04 · TARGET AUDIENCE</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">WHO PAYS ATTENTION</h3>
-                    <p class="text-sm text-white/55 mb-6">The user groups Bazodiac can serve first, from astrology-native consumers to precision-seeking B2B buyers.</p>
-                    <div class="space-y-2">
-                        <div class="h-2 rounded-full bg-white/10"><div class="h-2 rounded-full bg-[#D4AF37] w-[78%]"></div></div>
-                        <div class="h-2 rounded-full bg-white/10"><div class="h-2 rounded-full bg-[#3b82f6] w-[56%]"></div></div>
-                        <div class="h-2 rounded-full bg-white/10"><div class="h-2 rounded-full bg-[#D4AF37]/70 w-[42%]"></div></div>
-                    </div>
-                </a>
-
-                <a href="transparency.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">05 · TRANSPARENCY</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">TRUST LAYER</h3>
-                    <p class="text-sm text-white/55 mb-6">Why the engine can be explained, validated, and productized without falling into black-box mysticism.</p>
-                    <div class="grid grid-cols-2 gap-3 text-[10px] uppercase tracking-[0.2em] text-white/45">
-                        <div class="border border-[#D4AF37]/20 rounded p-3">Inputs</div>
-                        <div class="border border-[#D4AF37]/20 rounded p-3">Rules</div>
-                        <div class="border border-[#D4AF37]/20 rounded p-3">Versioning</div>
-                        <div class="border border-[#D4AF37]/20 rounded p-3">Audit</div>
-                    </div>
-                </a>
-
-                <a href="competition.html" class="glass-card interactive p-8 group block transition-transform hover:-translate-y-1">
-                    <div class="tech-label text-[#D4AF37]/60 mb-4">06 · COMPETITION</div>
-                    <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-4">WHY IT STANDS OUT</h3>
-                    <p class="text-sm text-white/55 mb-6">A concise view of where Bazodiac is deeper, where rivals are stronger, and where the moat can become real.</p>
-                    <div class="grid grid-cols-4 gap-2 text-[10px] text-center uppercase tracking-[0.2em] text-white/40">
-                        <div class="rounded border border-[#D4AF37]/20 py-3">CF</div>
-                        <div class="rounded border border-[#D4AF37]/20 py-3">PA</div>
-                        <div class="rounded border border-[#D4AF37]/20 py-3">AA</div>
-                        <div class="rounded border border-[#D4AF37]/20 py-3">OFT</div>
-                    </div>
-                </a>
+            <!-- 90-Day Cycle -->
+            <div class="glass-card p-8 reveal-up mb-12">
+                <h3 class="text-[#D4AF37] text-sm tracking-[0.25em] mb-6 text-center">90-DAY VALIDATION CYCLE</h3>
+                <div class="grid grid-cols-5 gap-2 text-center">
+                    <div><div class="text-[#D4AF37] text-lg font-light mb-1">D0</div><p class="text-[10px] text-white/30">Launch<br>Baseline</p></div>
+                    <div><div class="text-white/50 text-lg font-light mb-1">D14</div><p class="text-[10px] text-white/30">Early<br>Signals</p></div>
+                    <div><div class="text-white/50 text-lg font-light mb-1">D30</div><p class="text-[10px] text-white/30">Review 1<br>Iterate</p></div>
+                    <div><div class="text-white/50 text-lg font-light mb-1">D60</div><p class="text-[10px] text-white/30">Review 2<br>Adjust</p></div>
+                    <div><div class="text-[#D4AF37] text-lg font-light mb-1">D90</div><p class="text-[10px] text-white/30">Kill/Continue<br><span class="text-red-400/50">Mandatory</span></p></div>
+                </div>
+                <div class="h-1 bg-white/5 rounded-full mt-4 mb-6 relative">
+                    <div class="absolute left-0 top-0 h-1 bg-gradient-to-r from-[#D4AF37] to-[#D4AF37]/30 rounded-full w-full"></div>
+                </div>
+                <p class="text-center text-xs text-white/35 italic">"Kill criteria are committed before launch and cannot be changed during the cycle. When Day 90 arrives and the data is in the kill zone: pivot. Not discussed. Not postponed. Executed."</p>
             </div>
+
+            <!-- Pivot Plans -->
+            <div class="grid md:grid-cols-2 gap-8 reveal-up">
+                <div class="glass-card p-8">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-3">PIVOT A</span>
+                    <h3 class="text-white/70 text-sm tracking-widest mb-4">FUFIRE AS A SERVICE</h3>
+                    <p class="text-xs text-white/40">B2B API licensing. Other astrology apps use generic APIs (AstrologyAPI.com). A more precise, auditable engine as pay-per-chart or monthly flat rate for developers. The fusion logic is proprietary.</p>
+                </div>
+                <div class="glass-card p-8">
+                    <span class="tech-label text-[#D4AF37]/60 block mb-3">PIVOT B</span>
+                    <h3 class="text-white/70 text-sm tracking-widest mb-4">VOLUME MODEL</h3>
+                    <p class="text-xs text-white/40">Switch to Cosmic Fusion pricing (€2.99/week or €39.99/year). Compress all features into single tier. Add in-app purchases (Synastry Match €0.99, Annual Preview €4.99). Monetize via volume.</p>
+                </div>
+            </div>
+
+            <p class="text-center text-xs text-white/25 mt-12 italic reveal-up">"The FuFirE Engine remains valuable in every scenario — as consumer backend, as B2B API, or as basis for a changed business model. Only the packaging changes."</p>
         </div>
     </section>
 
-
-    <!-- SECTION 9: CTA -->
-    <section class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+    <!-- ═══════════════════════════════════════════════════════════════
+         SECTION 7: ASK — Investor CTA
+         ═══════════════════════════════════════════════════════════════ -->
+    <section id="ask" class="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
         <canvas id="cta-vortex" class="absolute inset-0 z-0"></canvas>
         <div class="relative z-10 max-w-3xl">
             <canvas id="cta-ring" width="220" height="220" class="mx-auto mb-12 opacity-50"></canvas>
-            <h2 class="gold-leaf-text text-4xl md:text-5xl tracking-[0.4em] font-extralight mb-12 uppercase reveal-up decode-title" data-text="YOUR SIGNAL IS WRITTEN">YOUR SIGNAL IS WRITTEN</h2>
-            
-            <form class="flex flex-col md:flex-row gap-4 justify-center items-center reveal-up" onsubmit="event.preventDefault()">
-                <input type="email" placeholder="your@email.com" class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 w-full md:w-72 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37] interactive">
-                <button type="submit" class="btn-primary bg-[#D4AF37] !text-[#05070a] font-bold interactive">Request Early Access</button>
+            <h2 class="gold-leaf-text text-4xl md:text-5xl tracking-[0.4em] font-extralight mb-6 uppercase reveal-up decode-title" data-text="YOUR SIGNAL IS WRITTEN">YOUR SIGNAL IS WRITTEN</h2>
+            <p class="text-sm text-white/40 mb-12 reveal-up">Request investor access to the full dossier, live engine demo, and founder meeting.</p>
+
+            <form id="investor-form" class="flex flex-col md:flex-row gap-4 justify-center items-center reveal-up" onsubmit="event.preventDefault(); document.getElementById('form-confirm').classList.remove('hidden'); this.classList.add('hidden');">
+                <input type="email" placeholder="your@email.com" required class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 w-full md:w-72 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37] interactive" style="min-height: 44px;">
+                <button type="submit" class="btn-primary bg-[#D4AF37] !text-[#05070a] font-bold interactive" style="min-height: 44px;">Request Access</button>
             </form>
+            <div id="form-confirm" class="hidden reveal-up">
+                <p class="text-[#D4AF37] text-sm tracking-widest mb-4">✓ REQUEST RECEIVED</p>
+                <p class="text-xs text-white/40">We'll be in touch within 48 hours with the full investor package.</p>
+            </div>
         </div>
     </section>
 
     <footer class="py-12 border-t border-white/5 text-center">
-        <style>
-            .glass-effect {
-                -webkit-backdrop-filter: blur(20px);
-                backdrop-filter: blur(20px);
-            }
-        </style>
         <p class="tech-label text-white/10">
-            BAZODIAC · Powered by FuFirE · 2026
+            BAZODIAC · Powered by FuFirE · 2026 · All figures preliminary unless sourced
         </p>
     </footer>
 </body>
