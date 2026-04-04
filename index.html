@@ -504,7 +504,7 @@
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Architecture -->
-                <a href="architecture.html" class="glass-btn-container reveal-up">
+                <a href="investor/architecture.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: ARCH_01</span>
@@ -516,7 +516,7 @@
                 </a>
 
                 <!-- Engine -->
-                <a href="engine.html" class="glass-btn-container reveal-up">
+                <a href="investor/engine.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: ENG_02</span>
@@ -528,7 +528,7 @@
                 </a>
 
                 <!-- Formula -->
-                <a href="formula.html" class="glass-btn-container reveal-up">
+                <a href="investor/formula.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: FORM_03</span>
@@ -540,7 +540,7 @@
                 </a>
 
                 <!-- Audience -->
-                <a href="audience.html" class="glass-btn-container reveal-up">
+                <a href="investor/audience.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: AUD_04</span>
@@ -552,7 +552,7 @@
                 </a>
 
                 <!-- Transparency -->
-                <a href="transparency.html" class="glass-btn-container reveal-up">
+                <a href="investor/transparency.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: TRANS_05</span>
@@ -564,7 +564,7 @@
                 </a>
 
                 <!-- Competition -->
-                <a href="competition.html" class="glass-btn-container reveal-up">
+                <a href="investor/competition.html" class="glass-btn-container reveal-up">
                     <div class="glass-card p-8 h-full border border-white/5 hover:border-[#D4AF37]/40 transition-all group">
                         <div class="flex justify-between items-start mb-6">
                             <span class="mono text-[10px] text-white/20">FILE: COMP_06</span>
@@ -588,14 +588,66 @@
             <h2 class="gold-leaf-text text-4xl md:text-5xl hero-title-tracking font-extralight mb-6 uppercase reveal-up decode-title" data-text="YOUR SIGNAL IS WRITTEN">YOUR SIGNAL IS WRITTEN</h2>
             <p class="text-sm text-white/40 mb-12 reveal-up">Request investor access to the full dossier, live engine demo, and founder meeting.</p>
 
-            <form id="investor-form" class="flex flex-col md:flex-row gap-4 justify-center items-center reveal-up" onsubmit="event.preventDefault(); document.getElementById('form-confirm').classList.remove('hidden'); this.classList.add('hidden');">
-                <input type="email" placeholder="your@email.com" required class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 w-full md:w-72 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37] interactive" style="min-height: 44px;">
-                <button type="submit" class="btn-primary bg-[#D4AF37] !text-[#05070a] font-bold interactive" style="min-height: 44px;">Request Access</button>
+            <form id="investor-form" class="flex flex-col gap-4 w-full max-w-md mx-auto reveal-up" novalidate>
+                <input id="req-name" type="text" placeholder="Full name" required
+                    class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37]"
+                    style="min-height:44px">
+                <input id="req-company" type="text" placeholder="Company / Fund (optional)"
+                    class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37]"
+                    style="min-height:44px">
+                <input id="req-email" type="email" placeholder="your@email.com" required
+                    class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37]"
+                    style="min-height:44px">
+                <textarea id="req-message" placeholder="Brief note — why you're interested (optional)" rows="2"
+                    class="bg-white/5 border border-[#D4AF37]/20 px-8 py-4 text-sm tracking-widest focus:outline-none focus:border-[#D4AF37] transition-all text-[#D4AF37] resize-none"></textarea>
+                <button id="req-submit" type="submit"
+                    class="btn-primary bg-[#D4AF37] !text-[#05070a] font-bold interactive"
+                    style="min-height:44px">Request Investor Access</button>
+                <p id="req-error" class="text-red-400/70 text-xs text-center hidden"></p>
             </form>
-            <div id="form-confirm" class="hidden reveal-up">
+
+            <div id="form-confirm" class="hidden text-center">
                 <p class="text-[#D4AF37] text-sm tracking-widest mb-4">✓ REQUEST RECEIVED</p>
-                <p class="text-xs text-white/40">We'll be in touch within 48 hours with the full investor package.</p>
+                <p class="text-xs text-white/40 max-w-sm mx-auto">We review requests manually and respond within 48 hours. You'll receive a secure access link by email once approved.</p>
             </div>
+
+            <script type="module">
+            import { supabase } from './supabase-config.js'
+            document.getElementById('investor-form').addEventListener('submit', async (e) => {
+                e.preventDefault()
+                const btn = document.getElementById('req-submit')
+                const errEl = document.getElementById('req-error')
+                const email = document.getElementById('req-email').value.trim()
+                const name  = document.getElementById('req-name').value.trim()
+                const company = document.getElementById('req-company').value.trim()
+                const message = document.getElementById('req-message').value.trim()
+                if (!email || !name) {
+                    errEl.textContent = 'Name and email are required.'
+                    errEl.classList.remove('hidden')
+                    return
+                }
+                btn.disabled = true
+                btn.textContent = 'Sending…'
+                errEl.classList.add('hidden')
+                const { error } = await supabase
+                    .from('investor_requests')
+                    .insert({ email, name, company, message })
+                if (error) {
+                    if (error.code === '23505') {
+                        errEl.textContent = 'This email has already requested access. Check your inbox or contact us directly.'
+                    } else {
+                        errEl.textContent = 'Something went wrong. Please try again.'
+                        console.error(error)
+                    }
+                    errEl.classList.remove('hidden')
+                    btn.disabled = false
+                    btn.textContent = 'Request Investor Access'
+                    return
+                }
+                document.getElementById('investor-form').classList.add('hidden')
+                document.getElementById('form-confirm').classList.remove('hidden')
+            })
+            </script>
         </div>
     </section>
 
