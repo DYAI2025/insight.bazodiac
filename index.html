@@ -72,89 +72,79 @@
     <!-- ═══════════════════════════════════════════════════════════════
          SECTION 1b: WHY — The Founding Thesis
          ═══════════════════════════════════════════════════════════════ -->
-    <section id="why" class="relative min-h-screen flex items-center justify-center px-6 border-b border-white/[0.04] overflow-hidden">
+    <section id="why" class="relative py-32 md:py-40 px-6 border-b border-white/[0.04] overflow-hidden">
 
         <!-- Gravitational particle field -->
         <canvas id="why-gravity" class="absolute inset-0 z-0"></canvas>
 
-        <!-- Orbiting rings -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]">
+        <!-- Orbiting rings — subtle, not dominant -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-[1]" style="opacity:0.5">
             <div class="why-orbit why-orbit-1"></div>
             <div class="why-orbit why-orbit-2"></div>
-            <div class="why-orbit why-orbit-3"></div>
         </div>
 
-        <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <div class="relative z-10 max-w-3xl mx-auto text-center">
 
-            <!-- Slot-machine WHY headline -->
-            <div class="mb-16">
-                <div class="inline-block relative overflow-hidden" style="height:clamp(4rem,10vw,8rem)">
+            <!-- Slot-machine WHY headline — sized to match section-title hierarchy -->
+            <div class="mb-12">
+                <div class="inline-block relative overflow-hidden" style="height:clamp(2.8rem,6vw,4.5rem)">
                     <div id="why-slot" style="height:100%;display:flex;flex-direction:column;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)">
-                        <span class="gold-leaf-text font-extralight tracking-[0.5em]" style="font-size:clamp(3rem,9vw,7rem);line-height:clamp(4rem,10vw,8rem)">HOW?</span>
-                        <span class="gold-leaf-text font-extralight tracking-[0.5em]" style="font-size:clamp(3rem,9vw,7rem);line-height:clamp(4rem,10vw,8rem)">WHAT?</span>
-                        <span class="gold-leaf-text font-extralight tracking-[0.5em]" style="font-size:clamp(3rem,9vw,7rem);line-height:clamp(4rem,10vw,8rem)">WHO?</span>
-                        <span class="gold-leaf-text font-extralight tracking-[0.5em]" style="font-size:clamp(3rem,9vw,7rem);line-height:clamp(4rem,10vw,8rem)">WHY.</span>
+                        <span class="gold-leaf-text font-extralight" style="font-size:clamp(2.2rem,5vw,4rem);line-height:clamp(2.8rem,6vw,4.5rem);letter-spacing:0.4em">HOW?</span>
+                        <span class="gold-leaf-text font-extralight" style="font-size:clamp(2.2rem,5vw,4rem);line-height:clamp(2.8rem,6vw,4.5rem);letter-spacing:0.4em">WHAT?</span>
+                        <span class="gold-leaf-text font-extralight" style="font-size:clamp(2.2rem,5vw,4rem);line-height:clamp(2.8rem,6vw,4.5rem);letter-spacing:0.4em">WHO?</span>
+                        <span class="gold-leaf-text font-extralight" style="font-size:clamp(2.2rem,5vw,4rem);line-height:clamp(2.8rem,6vw,4.5rem);letter-spacing:0.4em">WHY.</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Staggered text reveals -->
-            <div class="space-y-10">
-                <p class="why-line text-xl md:text-2xl font-light text-white/60 leading-relaxed opacity-0 translate-y-8">
+            <!-- Staggered text reveals — tighter spacing -->
+            <div class="space-y-6">
+                <p class="why-line text-base md:text-lg font-light text-white/55 leading-relaxed opacity-0 translate-y-6">
                     Because it's obvious to connect the <em class="text-[#D4AF37]/80 not-italic">what</em> and the <em class="text-[#D4AF37]/80 not-italic">how</em>.
                 </p>
 
-                <div class="w-[60px] h-[1px] bg-[#D4AF37]/30 mx-auto why-line opacity-0"></div>
+                <div class="w-[40px] h-[1px] bg-[#D4AF37]/20 mx-auto why-line opacity-0"></div>
 
-                <p class="why-line text-base md:text-lg text-white/45 leading-relaxed max-w-2xl mx-auto opacity-0 translate-y-8">
-                    The Western and the Eastern tradition only become a complete story when fused — one that creates <span class="text-white/70">coherence in self-reflection</span> without inflating meaning or implying nebulous fate projections.
+                <p class="why-line text-sm md:text-base text-white/40 leading-relaxed max-w-xl mx-auto opacity-0 translate-y-6">
+                    The Western and the Eastern tradition only become a complete story when fused — one that creates <span class="text-white/60">coherence in self-reflection</span> without inflating meaning or implying nebulous fate projections.
                 </p>
 
-                <p class="why-line text-base md:text-lg text-white/45 leading-relaxed max-w-2xl mx-auto opacity-0 translate-y-8">
+                <p class="why-line text-sm md:text-base text-white/40 leading-relaxed max-w-xl mx-auto opacity-0 translate-y-6">
                     It is the holistic picture of a cosmic, systemic constellation.<br>
-                    <span class="text-white/70">A placebo for the soul.</span>
+                    <span class="text-white/60">A placebo for the soul.</span>
                 </p>
 
-                <div class="why-line opacity-0 translate-y-8 mt-16">
-                    <div class="glass-card inline-block px-12 py-8 border-[#D4AF37]/30">
-                        <p class="text-lg md:text-xl text-[#D4AF37] italic leading-relaxed">
-                            "As if a NASA engineer<br>were reading your cards at night."
-                        </p>
-                    </div>
+                <div class="why-line opacity-0 translate-y-6 pt-6">
+                    <p class="text-sm md:text-base text-[#D4AF37]/70 italic leading-relaxed">
+                        "As if a NASA engineer were reading your cards at night."
+                    </p>
                 </div>
             </div>
         </div>
 
         <style>
-            /* Orbiting rings */
             .why-orbit {
                 position: absolute;
                 border-radius: 50%;
-                border: 1px solid rgba(212,175,55,0.06);
+                border: 1px solid rgba(212,175,55,0.04);
             }
             .why-orbit-1 {
-                width: min(700px, 90vw); height: min(700px, 90vw);
-                animation: why-spin 40s linear infinite;
+                width: min(500px, 80vw); height: min(500px, 80vw);
+                animation: why-spin 50s linear infinite;
             }
             .why-orbit-2 {
-                width: min(500px, 70vw); height: min(500px, 70vw);
-                animation: why-spin 28s linear infinite reverse;
-                border-color: rgba(99,102,241,0.05);
+                width: min(320px, 55vw); height: min(320px, 55vw);
+                animation: why-spin 35s linear infinite reverse;
+                border-color: rgba(99,102,241,0.03);
             }
-            .why-orbit-3 {
-                width: min(300px, 50vw); height: min(300px, 50vw);
-                animation: why-spin 18s linear infinite;
-                border-color: rgba(212,175,55,0.08);
-            }
-            /* Dot on each ring */
             .why-orbit::after {
                 content: '';
                 position: absolute;
-                width: 4px; height: 4px;
-                background: rgba(212,175,55,0.5);
+                width: 3px; height: 3px;
+                background: rgba(212,175,55,0.35);
                 border-radius: 50%;
-                top: -2px; left: 50%;
-                box-shadow: 0 0 12px rgba(212,175,55,0.3);
+                top: -1.5px; left: 50%;
+                box-shadow: 0 0 8px rgba(212,175,55,0.2);
             }
             @keyframes why-spin {
                 from { transform: rotate(0deg); }
@@ -169,7 +159,7 @@
             if (!canvas) return;
             const ctx = canvas.getContext('2d');
             const particles = [];
-            const count = window.innerWidth < 768 ? 60 : 150;
+            const count = window.innerWidth < 768 ? 35 : 80;
             let cx, cy, mouse = { x: -9999, y: -9999 };
 
             function resize() {
@@ -235,8 +225,8 @@
                         const q = particles[j];
                         const ddx = p.x - q.x, ddy = p.y - q.y;
                         const dd = ddx*ddx + ddy*ddy;
-                        if (dd < 6400) {
-                            const alpha = (1 - dd / 6400) * 0.12;
+                        if (dd < 5000) {
+                            const alpha = (1 - dd / 5000) * 0.08;
                             ctx.beginPath();
                             ctx.strokeStyle = p.gold ? `rgba(212,175,55,${alpha})` : `rgba(99,102,241,${alpha})`;
                             ctx.lineWidth = 0.5;
@@ -272,22 +262,22 @@
                     idx++;
                     slot.style.transform = `translateY(-${idx * lineH}px)`;
                     if (idx < words.length - 1) {
-                        setTimeout(spin, 400 + idx * 200);
+                        setTimeout(spin, 300 + idx * 150);
                     }
                 }
-                setTimeout(spin, 600);
+                setTimeout(spin, 400);
 
                 // Staggered text reveals after slot lands
                 const lines = document.querySelectorAll('.why-line');
-                const totalSlotTime = 600 + 400 + 600 + 800; // ~2400ms
+                const totalSlotTime = 400 + 300 + 450 + 600; // ~1750ms
                 lines.forEach((el, i) => {
                     setTimeout(() => {
-                        el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                        el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
                         el.style.opacity = '1';
                         el.style.transform = 'translateY(0)';
-                    }, totalSlotTime + i * 350);
+                    }, totalSlotTime + i * 250);
                 });
-            }, { threshold: 0.3 });
+            }, { threshold: 0.2 });
             observer.observe(canvas.parentElement);
         })();
         </script>
@@ -300,80 +290,71 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="section-title gold-leaf-text mb-20 decode-title" data-text="THE ILLUSION OF DEPTH">THE ILLUSION OF DEPTH</h2>
 
-            <div class="grid md:grid-cols-3 gap-8 items-start">
-
-                <!-- LEFT: Standard Apps -->
+            <!-- Top row: Standard Apps vs. BAZODIAC -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
                 <div class="reveal-up">
-                    <span class="tech-label text-red-900/40 block mb-4">STANDARD ASTROLOGY APPS TODAY</span>
-                    <div class="glass-card border-l-2 border-white/10 p-8">
-                        <ul class="space-y-4 text-white/35 text-sm">
+                    <span class="tech-label text-white/25 block mb-4">STANDARD ASTROLOGY APPS</span>
+                    <div class="glass-card border-l-2 border-white/10 p-7">
+                        <ul class="space-y-3 text-white/35 text-xs">
                             <li>One-dimensional sun-sign retrieval.</li>
-                            <li>Generic “You are…” statements with no causal logic.</li>
+                            <li>Generic “You are…” statements — no causal logic.</li>
                             <li>No real mathematics. No cross-system coherence.</li>
-                            <li>Apps that retrieve text blocks — not compute signals.</li>
-                            <li>Black-box engines. Unverifiable. Unauditable.</li>
+                            <li>Text blocks retrieved, not computed.</li>
+                            <li>Black-box engines. Unverifiable.</li>
                         </ul>
                     </div>
                 </div>
-
-                <!-- CENTER: Customer Desire -->
-                <div class="reveal-up md:-mt-4">
-                    <span class="tech-label text-white/60 block mb-4">CUSTOMER DESIRE</span>
-                    <div class="glass-card border-l-2 border-white/30 p-6 bg-white/[0.06]" style="border:1px solid rgba(255,255,255,0.12)">
-                        <p class="text-xs text-white/50 mb-5">A drive toward more transparency. Three kinds of customers:</p>
-
-                        <div class="space-y-5">
-                            <!-- Segment 1 -->
-                            <div>
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-[10px] uppercase tracking-widest text-white/30">True Believers</span>
-                                    <span class="mono text-[10px] text-white/20">€ low</span>
-                                </div>
-                                <div class="h-1.5 bg-white/5 rounded-full"><div class="h-1.5 rounded-full bg-white/15" style="width:15%"></div></div>
-                                <p class="text-[10px] text-white/25 mt-1">Deep into metaphysics and spiritual magic. Low willingness to pay — partial rejection of AI-assisted tools. Smallest revenue share.</p>
-                            </div>
-
-                            <!-- Segment 2 -->
-                            <div>
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-[10px] uppercase tracking-widest text-white/40">Everyday Believers</span>
-                                    <span class="mono text-[10px] text-white/25">€ med</span>
-                                </div>
-                                <div class="h-1.5 bg-white/5 rounded-full"><div class="h-1.5 rounded-full bg-white/25" style="width:60%"></div></div>
-                                <p class="text-[10px] text-white/30 mt-1">The majority. They believe when it’s entertaining or helpful. Rarely spend more than casually, if at all.</p>
-                            </div>
-
-                            <!-- Segment 3 -->
-                            <div>
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-[10px] uppercase tracking-widest text-[#D4AF37]/70">Framework Thinkers</span>
-                                    <span class="mono text-[10px] text-[#D4AF37]/60">€€€ high</span>
-                                </div>
-                                <div class="h-1.5 bg-white/5 rounded-full"><div class="h-1.5 rounded-full bg-[#D4AF37]/60" style="width:85%"></div></div>
-                                <p class="text-[10px] text-[#D4AF37]/50 mt-1">Smallest share of users — <span class="text-[#D4AF37]/80">largest share of revenue</span>. Less belief in astrology, more use of unconventional thinking frameworks to optimize, decide, and understand. They want technical facts with semantic charge — a substitute for missing spiritual practice in an overstimulated daily life.</p>
-                            </div>
-                        </div>
-
-                        <div class="mt-5 pt-4" style="border-top:1px solid rgba(212,175,55,0.15)">
-                            <p class="text-[10px] text-[#D4AF37]/70 text-center tracking-wider uppercase">These are the customers of Bazodiac.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT: BAZODIAC -->
                 <div class="reveal-up">
                     <span class="tech-label text-[#D4AF37] block mb-4">BAZODIAC</span>
-                    <div class="glass-card border-l-2 border-[#D4AF37] p-8">
-                        <ul class="space-y-4 text-white/70 text-sm">
+                    <div class="glass-card border-l-2 border-[#D4AF37] p-7">
+                        <ul class="space-y-3 text-white/60 text-xs">
                             <li>Psychological depth instead of memes.</li>
-                            <li>Process language instead of fatalistic judgments.</li>
-                            <li>A system that feels like therapy with the stars.</li>
+                            <li>Process language — not fatalistic judgments.</li>
+                            <li>Feels like therapy with the stars.</li>
                             <li>Transparent mathematics. Auditable. Deterministic.</li>
                             <li>Built for thinkers, not believers.</li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
+            <!-- Bottom row: Customer Desire — full width, compact -->
+            <div class="reveal-up">
+                <div class="glass-card p-7 bg-white/[0.04]" style="border:1px solid rgba(255,255,255,0.08)">
+                    <div class="flex items-center justify-between mb-5">
+                        <span class="tech-label text-white/50">CUSTOMER DESIRE</span>
+                        <span class="text-[10px] text-white/25">Revenue share by segment →</span>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[10px] uppercase tracking-widest text-white/25">True Believers</span>
+                                <span class="mono text-[9px] text-white/15">€ low</span>
+                            </div>
+                            <div class="h-1 bg-white/5 rounded-full mb-2"><div class="h-1 rounded-full bg-white/12" style="width:12%"></div></div>
+                            <p class="text-[10px] text-white/25 leading-relaxed">Deep into metaphysics. Low WTP — partial AI rejection. Smallest revenue.</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[10px] uppercase tracking-widest text-white/35">Everyday Believers</span>
+                                <span class="mono text-[9px] text-white/20">€ med</span>
+                            </div>
+                            <div class="h-1 bg-white/5 rounded-full mb-2"><div class="h-1 rounded-full bg-white/20" style="width:55%"></div></div>
+                            <p class="text-[10px] text-white/30 leading-relaxed">The majority. Believe when entertaining. Casual spend at best.</p>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between mb-1.5">
+                                <span class="text-[10px] uppercase tracking-widest text-[#D4AF37]/70">Framework Thinkers</span>
+                                <span class="mono text-[9px] text-[#D4AF37]/50">€€€</span>
+                            </div>
+                            <div class="h-1 bg-white/5 rounded-full mb-2"><div class="h-1 rounded-full bg-[#D4AF37]/50" style="width:85%"></div></div>
+                            <p class="text-[10px] text-[#D4AF37]/45 leading-relaxed">Smallest user share — <span class="text-[#D4AF37]/70">largest revenue share</span>. They want technical facts with semantic charge: a substitute for missing spiritual practice in an overstimulated life.</p>
+                        </div>
+                    </div>
+                    <div class="mt-5 pt-3" style="border-top:1px solid rgba(212,175,55,0.1)">
+                        <p class="text-[10px] text-[#D4AF37]/60 text-center tracking-wider uppercase">These are the customers of Bazodiac.</p>
+                    </div>
+                </div>
             </div>
 
             <p class="mt-20 text-center italic text-[#D4AF37]/70 max-w-[700px] mx-auto reveal-up">
