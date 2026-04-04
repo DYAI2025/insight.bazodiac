@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>BAZODIAC — Investor Dashboard</title>
+    <link rel="stylesheet" href="../investor.css">
+</head>
+<body>
+    <div class="film-grain"></div>
+    <div class="vignette" id="vignette"></div>
+    <div id="nebula-lens" class="nebula-lens"></div>
+    <div id="custom-cursor" class="custom-cursor"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="../index.html">← BAZODIAC</a>
+            <nav class="topnav">
+                <a href="architecture.html">Architecture</a>
+                <a href="engine.html">Engine</a>
+                <a href="formula.html">Formula</a>
+                <a href="audience.html">Audience</a>
+                <a href="transparency.html">Transparency</a>
+                <a href="competition.html">Competition</a>
+                <button id="logout-btn" style="background:none;border:none;color:rgba(255,255,255,0.3);font-size:10px;letter-spacing:0.3em;text-transform:uppercase;cursor:pointer;padding:0">Sign Out</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-panel">
+            <div class="page-shell">
+                <div class="reveal-up" style="max-width:640px">
+                    <span class="tech-label kicker">Investor Portal</span>
+                    <h1 class="gold-leaf-text text-4xl md:text-5xl">Investor Dossier</h1>
+                    <p id="welcome-msg" style="margin-top:1.5rem;color:rgba(255,255,255,0.5)">
+                        Six deep dives into the BAZODIAC signal. Confidential pre-investment materials.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block">
+            <div class="page-shell">
+                <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem">
+
+                    <a href="architecture.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">01 · Architecture</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">SYSTEM STACK</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">How Bazodiac turns birth data into a deterministic fusion output, from astronomy to product layer.</p>
+                    </a>
+
+                    <a href="engine.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">02 · Engine</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">DEEP-TECH CORE</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">What the FuFirE Engine actually computes and where it stays deterministic.</p>
+                    </a>
+
+                    <a href="formula.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">03 · Formula</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">MATH YOU CAN READ</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">The few formulas that matter: time correction, vector fusion, normalization, coherence.</p>
+                    </a>
+
+                    <a href="audience.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">04 · Audience</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">WHO PAYS ATTENTION</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">Target segments from framework-curious consumers to B2B buyers, with WTP analysis.</p>
+                    </a>
+
+                    <a href="transparency.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">05 · Transparency</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">TRUST LAYER</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">Why the engine can be explained, validated, and productized without black-box mysticism.</p>
+                    </a>
+
+                    <a href="competition.html" class="glass-card reveal-up" style="padding:2rem;display:block;text-decoration:none;transition:transform 0.3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">
+                        <div class="tech-label kicker">06 · Competition</div>
+                        <h3 class="gold-leaf-text" style="font-size:1rem;letter-spacing:0.2em;margin:0.5rem 0">COMPETITIVE EDGE</h3>
+                        <p style="font-size:0.8rem;color:rgba(255,255,255,0.45)">Honest analysis of where Bazodiac leads and where it must earn its position.</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">BAZODIAC · Confidential Investor Materials · 2026</footer>
+
+    <script src="../investor.js"></script>
+    <script type="module">
+        import { requireApprovedSession, signOut } from './auth-guard.js'
+        const user = await requireApprovedSession()
+        document.getElementById('welcome-msg').textContent =
+            `Welcome. You're viewing confidential pre-investment materials as ${user.email}.`
+        document.getElementById('logout-btn').addEventListener('click', () => signOut())
+    </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bazodiac Investor — Architecture</title>
-  <link rel="stylesheet" href="investor.css" />
+  <link rel="stylesheet" href="../investor.css" />
 </head>
 <body>
   <div class="film-grain"></div>
@@ -15,7 +15,7 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="index.html">Bazodiac Investor Pages</a>
+      <a class="brand" href="../index.html">Bazodiac Investor Pages</a>
       <nav class="topnav"><a href="engine.html">Engine</a><a href="formula.html">Formula</a><a href="audience.html">Audience</a><a href="transparency.html">Transparency</a><a href="competition.html">Competition</a></nav>
     </div>
   </header>
@@ -24,7 +24,7 @@
     <section class="hero-panel">
       <div class="page-shell hero-grid">
         <div class="hero-copy reveal-up">
-          <a class="back-link" href="index.html#investor-dossier">← Back to main page</a>
+          <a class="back-link" href="../index.html#investor-dossier">← Back to main page</a>
           <span class="tech-label kicker">Investor Deep Dive</span>
           <h1 class="gold-leaf-text text-4xl md:text-6xl">Architecture</h1>
           <p style="margin-top:1.5rem">Bazodiac is easiest to understand as a four-layer system: astronomical truth, symbolic fusion, product logic, and investor-facing delivery. Each layer narrows ambiguity instead of adding mystique.</p>
@@ -72,6 +72,10 @@
   </main>
 
   <footer class="page-footer">Bazodiac · Powered by FuFirE · Internal investor website draft · March 2026</footer>
-  <script src="investor.js"></script>
+  <script src="../investor.js"></script>
+  <script type="module">
+    import { requireApprovedSession } from "./auth-guard.js"
+    await requireApprovedSession()
+  </script>
 </body>
 </html>
