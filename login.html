@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>BAZODIAC — Investor Access</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .btn-gold {
+            border: 1px solid #D4AF37;
+            color: #D4AF37;
+            padding: 14px 44px;
+            letter-spacing: 0.2em;
+            font-size: 11px;
+            text-transform: uppercase;
+            background: transparent;
+            transition: 0.4s cubic-bezier(0.16,1,0.3,1);
+            cursor: pointer;
+            width: 100%;
+            min-height: 44px;
+        }
+        .btn-gold:hover:not(:disabled) { background: #D4AF37; color: #05070a; }
+        .btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
+        input, textarea {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 16px 24px;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            color: #D4AF37;
+            width: 100%;
+            outline: none;
+            min-height: 44px;
+            transition: border-color 0.3s;
+        }
+        input:focus { border-color: #D4AF37; }
+        input::placeholder { color: rgba(255,255,255,0.3); }
+    </style>
+</head>
+<body class="px-6">
+    <div class="film-grain"></div>
+    <div id="nebula-lens" class="nebula-lens" style="left:50%;top:50%;transform:translate(-50%,-50%)"></div>
+
+    <div class="relative z-10 w-full max-w-sm text-center">
+
+        <!-- Brand -->
+        <a href="index.html" class="block mb-2">
+            <h1 class="gold-leaf-text text-3xl font-extralight tracking-[0.5em]">BAZODIAC</h1>
+        </a>
+        <p class="tech-label mb-16" style="color:rgba(255,255,255,0.3)">Investor Access Portal</p>
+
+        <!-- STATE: checking -->
+        <div id="state-checking">
+            <p class="text-sm" style="color:rgba(255,255,255,0.4)">Verifying session…</p>
+        </div>
+
+        <!-- STATE: login form -->
+        <div id="state-login" class="hidden space-y-4">
+            <p class="text-sm mb-8" style="color:rgba(255,255,255,0.5)">Enter your approved email to receive a secure access link.</p>
+            <input id="login-email" type="email" placeholder="your@email.com" autocomplete="email">
+            <button id="login-btn" class="btn-gold">Send Access Link</button>
+            <p id="login-error" class="text-xs hidden" style="color:rgba(239,68,68,0.7)"></p>
+            <a href="index.html" class="block mt-8 tech-label transition-all"
+               style="color:rgba(255,255,255,0.2)" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">
+                ← Request access
+            </a>
+        </div>
+
+        <!-- STATE: link sent -->
+        <div id="state-sent" class="hidden space-y-4">
+            <p class="text-sm tracking-widest" style="color:#D4AF37">✓ ACCESS LINK SENT</p>
+            <p class="text-xs" style="color:rgba(255,255,255,0.4)">Check your inbox. The link expires in 1 hour.</p>
+            <p class="text-xs mt-4" style="color:rgba(255,255,255,0.2)">Can't find it? Check spam or <a href="index.html" style="color:#D4AF37">re-request access</a>.</p>
+        </div>
+
+        <!-- STATE: pending / not approved -->
+        <div id="state-pending" class="hidden space-y-4">
+            <p class="text-sm" style="color:rgba(255,255,255,0.5)">Your request is under review.</p>
+            <p class="text-xs" style="color:rgba(255,255,255,0.3)">We'll email you once your access is approved — usually within 48 hours.</p>
+            <a href="index.html" class="block mt-8 tech-label transition-all"
+               style="color:rgba(255,255,255,0.2)" onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">
+                ← Back to main page
+            </a>
+        </div>
+
+        <!-- STATE: redirecting -->
+        <div id="state-redirecting" class="hidden">
+            <p class="text-sm" style="color:rgba(212,175,55,0.6)">Access confirmed. Redirecting…</p>
+        </div>
+
+    </div>
+
+    <script type="module">
+    import { supabase } from './supabase-config.js'
+
+    const STATES = ['checking','login','sent','pending','redirecting']
+    const show = name => STATES.forEach(s =>
+        document.getElementById(`state-${s}`).classList.toggle('hidden', s !== name)
+    )
+
+    // Where to redirect after login
+    const params = new URLSearchParams(location.search)
+    const next = params.get('next') || './investor/dashboard.html'
+
+    async function checkApprovedAndRedirect(session) {
+        show('redirecting')
+        const { data: req } = await supabase
+            .from('investor_requests')
+            .select('status')
+            .eq('email', session.user.email)
+            .single()
+
+        if (!req || req.status !== 'approved') {
+            show('pending')
+            return
+        }
+        window.location.replace(next)
+    }
+
+    async function init() {
+        // Handle magic link token in URL hash (#access_token=...)
+        const hash = new URLSearchParams(location.hash.replace('#',''))
+        const accessToken = hash.get('access_token')
+        if (accessToken) {
+            const { data } = await supabase.auth.setSession({
+                access_token: accessToken,
+                refresh_token: hash.get('refresh_token') || ''
+            })
+            history.replaceState(null, '', location.pathname + location.search)
+            if (data?.session) {
+                await checkApprovedAndRedirect(data.session)
+                return
+            }
+        }
+
+        // Check for existing session
+        const { data: { session } } = await supabase.auth.getSession()
+        if (session) {
+            await checkApprovedAndRedirect(session)
+            return
+        }
+
+        // No session → show login form
+        show('login')
+    }
+
+    // Magic link request
+    document.getElementById('login-btn').addEventListener('click', async () => {
+        const email  = document.getElementById('login-email').value.trim()
+        const btn    = document.getElementById('login-btn')
+        const errEl  = document.getElementById('login-error')
+
+        errEl.classList.add('hidden')
+        if (!email) {
+            errEl.textContent = 'Please enter your email.'
+            errEl.classList.remove('hidden')
+            return
+        }
+
+        btn.disabled = true
+        btn.textContent = 'Checking…'
+
+        // Check existence + approval status in DB
+        const { data: req } = await supabase
+            .from('investor_requests')
+            .select('status')
+            .eq('email', email)
+            .single()
+
+        if (!req) {
+            errEl.textContent = 'This email has not requested access. Please submit a request on the main page.'
+            errEl.classList.remove('hidden')
+            btn.disabled = false
+            btn.textContent = 'Send Access Link'
+            return
+        }
+
+        if (req.status !== 'approved') {
+            show('pending')
+            return
+        }
+
+        // Approved → send magic link
+        btn.textContent = 'Sending…'
+        const redirectTo = location.origin +
+            location.pathname.replace('login.html','') +
+            'investor/dashboard.html'
+
+        const { error } = await supabase.auth.signInWithOtp({
+            email,
+            options: { emailRedirectTo: redirectTo }
+        })
+
+        if (error) {
+            errEl.textContent = 'Failed to send link. Please try again.'
+            errEl.classList.remove('hidden')
+            btn.disabled = false
+            btn.textContent = 'Send Access Link'
+            return
+        }
+
+        show('sent')
+    })
+
+    // Allow submit on Enter key
+    document.getElementById('login-email').addEventListener('keydown', e => {
+        if (e.key === 'Enter') document.getElementById('login-btn').click()
+    })
+
+    init()
+    </script>
+</body>
+</html>
